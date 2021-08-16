@@ -13,7 +13,7 @@ local array. Return the local array;
 const addOne = (arr) => {
   const result = [];
 
-  arr.forEach((element) => result.push(element + 1));
+  arr.forEach(element => result.push(element + 1));
 
   return result;
 };
@@ -21,13 +21,19 @@ const addOne = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named `addExclamation` that takes an array of strings, and returns a new array ofthe same strings with an "!" added to the end.
+Write a function named `addExclamation` that takes an array of strings, and returns a new array of
+the same strings with an "!" added to the end.
 
-Use `forEach` to loop over the input array. Modify each string, and add the updated value into a local array. Return the local array;
+Use `forEach` to loop over the input array. Modify each string, and add the updated value into a
+local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
-  // Solution code here...
+  const result = [];
+
+  arr.forEach(element => result.push(`${element}!`));
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
