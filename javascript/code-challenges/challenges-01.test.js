@@ -152,7 +152,20 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const result = [];
+  const IS_DIVISIBLE_BY_THREE = "Fizz";
+  const IS_DIVISIBLE_BY_FIVE = "Buzz";
+  const IS_DIVISIBLE_BY_THREE_AND_FIVE = "Fizz Buzz";
+
+  arr.forEach(number => {
+    if (number % 3 === 0 && number % 5 === 0) result.push(IS_DIVISIBLE_BY_THREE_AND_FIVE);
+    else if (number % 3 === 0) result.push(IS_DIVISIBLE_BY_THREE);
+    else if (number % 5 === 0) result.push(IS_DIVISIBLE_BY_FIVE);
+    else result.push(number);
+  });
+
+  console.log(result);
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -206,7 +219,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
