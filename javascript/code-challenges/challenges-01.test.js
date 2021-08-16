@@ -39,13 +39,19 @@ const addExclamation = (arr) => {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named `allUpperCase` that takes an array of strings, and returns a new array of the strings converted to upper case.
+Write a function named `allUpperCase` that takes an array of strings, and returns a new array of
+the strings converted to upper case.
 
-Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
+Use `forEach` to loop over the input array. The modified strings should each be added into a local
+array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
-  // Solution code here...
+  const result = [];
+
+  arr.forEach(element => result.push(element.toUpperCase()));
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
