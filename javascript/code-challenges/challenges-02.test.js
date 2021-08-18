@@ -50,7 +50,14 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 ------------------------------------------------------------------------------------------------ */
 
 const forLoopTwoToThe = (arr) => {
-  // Solution code here...
+  const result = [];
+  const BASE = 2;
+
+  for (const number of arr) {
+    result.push(BASE ** number);
+  }
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +68,12 @@ function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
 const forEachTwoToThe = (arr) => {
-  // Solution code here...
+  const result = [];
+  const BASE = 2;
+
+  arr.forEach(number => result.push(BASE ** number));
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
