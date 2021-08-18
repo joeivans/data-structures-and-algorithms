@@ -112,9 +112,12 @@ its place.
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOdd = arr => {
-  // Solution code here...
-};
+const evenOdd = arr =>
+  arr.map(number => {
+    if (typeof number === typeof 1) return number % 2 === 0 ? 'even' : 'odd';
+
+    else return 'N/A';
+  });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
