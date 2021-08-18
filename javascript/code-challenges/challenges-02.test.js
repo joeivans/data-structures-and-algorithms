@@ -35,9 +35,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
 
-const addQuestion = (arr) => {
-  // Solution code here...
-};
+const addQuestion = (arr) => arr.map(strIn => `${strIn}?`);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
