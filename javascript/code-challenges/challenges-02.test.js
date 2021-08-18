@@ -12,8 +12,9 @@ this problem.
 
 const raisedToTheThird = (arr) => {
   const result = [];
+  const POWER = 3;
 
-  arr.forEach(number => result.push(number ** 3));
+  arr.forEach(number => result.push(number ** POWER));
 
   return result;
 };
