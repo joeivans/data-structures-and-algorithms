@@ -10,7 +10,7 @@ this problem.
 
 ------------------------------------------------------------------------------------------------ */
 
-const raisedToTheThird = (arr) => {
+const raisedToTheThird = arr => {
   const result = [];
   const POWER = 3;
 
@@ -26,7 +26,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => arr.map(number => number + 1);
+const addOne = arr => arr.map(number => number + 1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -35,7 +35,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
 
-const addQuestion = (arr) => arr.map(strIn => `${strIn}?`);
+const addQuestion = arr => arr.map(strIn => `${strIn}?`);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -49,7 +49,7 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
-const forLoopTwoToThe = (arr) => {
+const forLoopTwoToThe = arr => {
   const result = [];
   const BASE = 2;
 
@@ -67,7 +67,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = (arr) => {
+const forEachTwoToThe = arr => {
   const result = [];
   const BASE = 2;
 
@@ -84,9 +84,7 @@ from challenge 4 and your forEachTwoToThe function from challenge 5, but uses ma
 loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = (arr) => {
-  // Solution code here...
-};
+const mapTwoToThe = arr => arr.map(number => 2 ** number);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -100,7 +98,7 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
-const charCode = (arr) => {
+const charCode = arr => {
   // Solution code here...
 };
 
@@ -116,7 +114,7 @@ its place.
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOdd = (arr) => {
+const evenOdd = arr => {
   // Solution code here...
 };
 
@@ -163,7 +161,7 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-const extractAbilities = (arr) => {
+const extractAbilities = arr => {
   // Solution code here...
 };
 
@@ -211,7 +209,7 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = (arr) => {
+const extractStats = arr => {
   // Solution code here...
 };
 
