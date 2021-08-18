@@ -25,9 +25,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => {
-  // Solution code here...
-};
+const addOne = (arr) => arr.map(number => number + 1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
