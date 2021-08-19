@@ -52,9 +52,9 @@ an array containing only the odd integers.
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = arr => {
-  // Solution code here...
-};
+const oddValues = arr => arr.filter(element => {
+  if (element % 2 !== 0) return element;
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
