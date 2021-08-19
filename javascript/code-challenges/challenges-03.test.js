@@ -8,7 +8,13 @@ Place the new value in a new array. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  // Solution code here...
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++){
+    result.push(arr[i] + 2);
+  }
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
