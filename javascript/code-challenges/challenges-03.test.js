@@ -65,9 +65,10 @@ array of all the elements in the second array that are not included in the first
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
-};
+const notInFirstArray = (forbiddenValues, arr) =>
+  arr.filter(element => {
+    if (!forbiddenValues.includes(element)) return element;
+  });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
