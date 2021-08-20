@@ -67,9 +67,12 @@ with the numbers sorted, largest to smallest.
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => {
-  // Solution code here...
-};
+const sortBackwards = (arr) =>
+  arr.sort((a, b) => {
+    if (a > b) return -1;
+    if (a < b) return 1;
+    else return 0;
+  });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
