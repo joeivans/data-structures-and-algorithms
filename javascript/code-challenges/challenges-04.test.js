@@ -51,12 +51,7 @@ largest.
 HINT: Beware... JS default is "Lexical" ordering.
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbers = (arr) =>
-  arr.sort((a, b) => {
-    if (a < b) return -1;
-    if (a > b) return 1;
-    else return 0;
-  });
+const sortNumbers = (arr) => arr.sort((a, b) => a - b);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -67,12 +62,7 @@ with the numbers sorted, largest to smallest.
 HINT: Do it with a custom sort callback, not with using `.reverse()`. ;)
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) =>
-  arr.sort((a, b) => {
-    if (a > b) return -1;
-    if (a < b) return 1;
-    else return 0;
-  });
+const sortBackwards = (arr) => arr.sort((a, b) => b - a);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -101,9 +91,7 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const sortByPrice = (arr) => {
-  // Solution code here...
-};
+const sortByPrice = (arr) => arr.sort((a, b) => a.price - b.price);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
