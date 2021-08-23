@@ -41,8 +41,9 @@ example.
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
-  // Solution code here...
+const addPurchases = arr => {
+  const STARTING_SUM = 0;
+  return arr.reduce((sum, value) => sum += value.purchasePrice, STARTING_SUM);
 };
 
 /* ------------------------------------------------------------------------------------------------
