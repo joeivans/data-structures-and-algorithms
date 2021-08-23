@@ -133,9 +133,14 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (str) => {
-  // Solution code here...
-};
+// Hello
+// 01234
+// 43210
+// olleH
+// {len-1}-{index}
+// 5-1-{0}=>4; 5-1-{1}=>3; 5-1-{2}=>2; 5-1-{3}=>1; 5-1-{4}=>0;
+const reversedString = str =>
+  [...str].reduce((accumulator, value, index) => accumulator += str[str.length - 1 - index], '');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
