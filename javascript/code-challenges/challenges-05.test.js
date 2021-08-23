@@ -22,8 +22,9 @@ values in the array.
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => {
-  // Solution code here...
+const addValues = arr => {
+  const STARTING_SUM = 0;
+  return arr.reduce((sum, value) => sum += value, STARTING_SUM);
 };
 
 /* ------------------------------------------------------------------------------------------------
