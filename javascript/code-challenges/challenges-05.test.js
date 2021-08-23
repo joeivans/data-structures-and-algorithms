@@ -55,8 +55,9 @@ the number of elements in the array.
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
+const countNumberOfElements = arr => {
+  const STARTING_SUM = 0;
+  return arr.reduce(sum => sum += 1, STARTING_SUM);
 };
 
 /* ------------------------------------------------------------------------------------------------
