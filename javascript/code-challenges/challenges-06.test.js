@@ -23,9 +23,14 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = (arr) => {
-  // Solution code here...
-};
+const getNames = arr =>
+  arr.map(person => {
+    let reversedName = [];
+    for (let i = 0; i < person.name.length; i++) {
+      reversedName.push(person.name[person.name.length - 1 - i]);
+    }
+    return reversedName.join('');
+  });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
