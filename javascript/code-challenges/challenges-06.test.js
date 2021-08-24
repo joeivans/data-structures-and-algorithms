@@ -40,9 +40,7 @@ original source string should not be modified.
 
 ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = (str) => {
-  // Solution code here...
-};
+const appendTheEnd = str => `${str} The end.`;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
