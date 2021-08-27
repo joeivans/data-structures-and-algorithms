@@ -51,12 +51,9 @@ HR has asked you to change the data to make it easier to print so that it looks 
   'Ada Lovelace: 222-349-9842',
   'Alan Turing: 222-853-5933'
 ]
-
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = (obj) => {
-  // Solution code here...
-};
+const updateNumbers = obj => Object.entries(obj).map(entry => `${entry[0]}: ${entry[1]}`);
 
 
 /* ------------------------------------------------------------------------------------------------
