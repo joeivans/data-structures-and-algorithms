@@ -7,7 +7,7 @@ Write a function called sortStarWarsCharacters that sorts the characters in the 
 array by height from tallest to shortest.
 ------------------------------------------------------------------------------------------------ */
 
-let starWarsPeople = [
+const starWarsPeople = [
   {
     'name': 'C-3PO',
     'height': '167',
@@ -135,7 +135,9 @@ const listFoods = recipe => {
     for (let i = 0; i < 2; i++) {
       const targetCandidate = ingredient.indexOf(' ', target);
 
-      if (targetCandidate > -1) target = targetCandidate + 1;
+      if (targetCandidate > -1) {
+        target = targetCandidate + 1;
+      }
     }
 
     result.push(ingredient.slice(target));
@@ -153,7 +155,7 @@ You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
 const splitFoods = (recipe) => {
-  let result = [];
+  const result = [];
   // Solution code here...
   return result;
 };
@@ -171,7 +173,7 @@ returns ['Mix'].
 ------------------------------------------------------------------------------------------------ */
 
 const stepActions = (recipe) => {
-  let result = [];
+  const result = [];
   // Solution code here...
   return result;
 };
@@ -226,7 +228,7 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 ------------------------------------------------------------------------------------------------ */
 
 const totalSumCSV = (str) => {
-  let total = 0;
+  const total = 0;
   // Solution code here...
   return total;
 };
@@ -311,20 +313,60 @@ describe('Testing challenge 5', () => {
 
 describe('Testing challenge 6', () => {
   test('It should return a list of foods', () => {
-    expect(listFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
+    expect(
+      listFoods(gruffaloCrumble))
+      .toStrictEqual([
+        'Gruffalo',
+        'oats',
+        'brown sugar',
+        'flour',
+        'pure maple syrup',
+        'chopped nuts',
+        'baking soda',
+        'baking powder',
+        'cinnamon',
+        'melted butter',
+        'fresh water'
+      ]);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
   });
 });
 
 xdescribe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
-    expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
+    expect(
+      splitFoods(gruffaloCrumble))
+      .toStrictEqual([
+        'Gruffalo',
+        'oats',
+        'brown sugar',
+        'flour',
+        'pure maple syrup',
+        'chopped nuts',
+        'baking soda',
+        'baking powder',
+        'cinnamon',
+        'melted butter',
+        'fresh water'
+      ]);
   });
 });
 
 xdescribe('Testing challenge 8', () => {
   test('It should return a list of recipe steps', () => {
-    expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
+    expect(
+      stepActions(gruffaloCrumble))
+      .toStrictEqual([
+        'Pre-heat',
+        'De-prickle',
+        'Sprinkle',
+        'Mix',
+        'Grease',
+        'Combine',
+        'Fold',
+        'Spread',
+        'Bake'
+      ]);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
