@@ -122,11 +122,22 @@ const isCapitalized = str => str.match(/\b[A-Z]\S*\b/g) || [];
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
+Write a function named citiesAtoJ that takes in an array of city names and uses a regular
+expression pattern to return a new array containing any cities that begin with the letters A
+through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
-const citiesAtoJ = (arr) => {
-  // Solution code here...
+const citiesAtoJ = arr => {
+  const result = [];
+
+  arr.forEach(str => {
+    const matches = str.match(/^[A-J].*$/gi);
+    if (matches === null) return;
+
+    result.push(...matches);
+  });
+
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -261,7 +272,20 @@ describe('Testing challenge 5', () => {
 });
 
 describe('Testing challenge 6', () => {
-  let cities = ['Cleveland', 'San Diego', 'Birmingham', 'Seattle', 'Miami', 'New York City', 'Omaha', 'Portland', 'Austin', 'Boston', 'Newport Beach', 'Hoboken'];
+  let cities = [
+    'Cleveland',
+    'San Diego',
+    'Birmingham',
+    'Seattle',
+    'Miami',
+    'New York City',
+    'Omaha',
+    'Portland',
+    'Austin',
+    'Boston',
+    'Newport Beach',
+    'Hoboken'
+  ];
 
   test('It should return the cities whose names begin with the letters A through J', () => {
     expect(citiesAtoJ(cities)).toContain('Cleveland', 'Birmingham', 'Austin', 'Boston', 'Hoboken');
