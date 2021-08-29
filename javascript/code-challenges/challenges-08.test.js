@@ -11,7 +11,7 @@ each house (fewest to most). If a house has the same number of children, sort al
 house name.
 
 ------------------------------------------------------------------------------------------------ */
-let characters = [
+const characters = [
   {
     name: 'Eddard',
     spouse: 'Catelyn',
@@ -59,22 +59,25 @@ let characters = [
 const sortByChildren = charArray =>
   charArray.sort((a, b) => {
     const len = a.children.length - b.children.length;
-    if (len === 0) {
+    const hasEqualNumberOfChildren = len === 0;
+
+    if (hasEqualNumberOfChildren) {
       return a.house - b.house;
     }
+
     return len;
   });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
+Write a function named containsW that takes in a string. This function should use a regular
+expression pattern to return true if the string contains the letter 'w' in lower case or false if
+it does not.
 
 ------------------------------------------------------------------------------------------------ */
 
-const containsW = (str) => {
-  // Solution code here...
-};
+const containsW = str => str.search(/w/g) > -1;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
