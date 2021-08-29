@@ -46,9 +46,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 string on a space.
 ------------------------------------------------------------------------------------------------ */
 
-const joinArray = (arr) => {
-  // Solution code here...
-};
+const joinArray = arr => arr.join(' ');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
