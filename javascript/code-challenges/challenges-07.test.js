@@ -80,9 +80,7 @@ every element is a character of the input string.
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
-};
+const wordsToCharList = str => Array.from(str);
 
 
 /* ------------------------------------------------------------------------------------------------
