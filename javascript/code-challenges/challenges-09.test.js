@@ -59,7 +59,8 @@ const updateNumbers = obj => Object.entries(obj).map(entry => `${entry[0]}: ${en
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
+Write a function named getHouses that returns a new array containing the names of all of the houses
+in the data set.
 ------------------------------------------------------------------------------------------------ */
 
 const characters = [
@@ -105,11 +106,7 @@ const characters = [
   },
 ];
 
-const getHouses = (arr) => {
-  let houses = [];
-  // Solution code here...
-  return houses;
-};
+const getHouses = arr => arr.map(character => character.house);
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
