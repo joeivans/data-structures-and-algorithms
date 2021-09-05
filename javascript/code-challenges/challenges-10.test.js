@@ -51,9 +51,13 @@ const totalSum = matrix => matrix.flat().reduce((sum, num) => sum + num, 0);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
+You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling
+salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to
+create an array of the total number of cookies sold per hour for all of his stores combined.
 
-Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
+Write a function named grandTotal that adds up the cookies sales for each hour of operation for all
+of the stores combined. For example, the first element in the hourlySales array should be the sum
+of the cookies sold in the 9:00 a.m. hour at all five stores combined.
 
 For this example, the total at 9:00 a.m. is 17 + 26 + 7 + 5 + 33, or 88 total cookies.
 
@@ -70,11 +74,34 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
-const grandTotal = (stores) => {
-  // Solution code here...
+const grandTotal = stores => {
+  /*
+    5 arrays of length 12
+    i = 0; i < stores[i].length
+    j = 0; j < stores.length
+    [                                              j  i
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], --> [0][0] | [0][1]
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],     [1][0] | [1][1]
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],     [2][0] | [2][1]
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],     [3][0] | [3][1]
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],     [4][0] | [4][1]
+    ]
+  */
+  const result = [];
+  let i = 0;
 
+  do {
+    let sum = 0;
+    for (let j = 0; j < stores.length; j++) {
+      sum += stores[j][i];
+    }
+    result.push(sum);
+  } while (++i < stores[0].length && stores.every(store => store.length === stores[0].length));
+
+  return result;
 };
 
+// expected --> [88, 153, 252, 286, 139, 161, 145, 232, 276, 207, 161, 169]
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
