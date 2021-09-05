@@ -34,7 +34,8 @@ const findMax = matrix => matrix.flat().sort((a, b) => b - a).shift();
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named totalSum that takes in a matrix of numbers and returns the totalSum of all the numbers.
+Write a function named totalSum that takes in a matrix of numbers and returns the totalSum of all
+the numbers.
 
 For example:
 [
@@ -45,10 +46,7 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
-const totalSum = (matrix) => {
-  // Solution code here...
-};
-
+const totalSum = matrix => matrix.flat().reduce((sum, num) => sum + num, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
