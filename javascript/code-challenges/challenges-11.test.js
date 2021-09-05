@@ -57,13 +57,20 @@ Write a function named divisibleByFiveTwoToThePower that accepts an array of arr
 
 This function should first remove any elements that are not numbers or are not divisible by five.
 
-This function should then raise 2 to the power of the resulting numbers, returning an array of arrays.
+This function should then raise 2 to the power of the resulting numbers, returning an array of
+arrays.
 
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+const divisibleByFiveTwoToThePower = input => {
+  const isDivisibleByFive = (value) => typeof value === typeof 1 && value % 5 < 1;
+
+  return input
+    .map(values => values
+      .filter(value => isDivisibleByFive(value))
+      .map(value => 2 ** value)
+    );
 };
 
 /* ------------------------------------------------------------------------------------------------
