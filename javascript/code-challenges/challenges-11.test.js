@@ -26,16 +26,15 @@ function transformToLis(obj) {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named count that, given an integer and an array of arrays, uses either filter, map, or reduce to count the amount of times the integer is present in the array of arrays.
+Write a function named count that, given an integer and an array of arrays, uses either filter,
+map, or reduce to count the amount of times the integer is present in the array of arrays.
 
 Note: You might need to use the same method more than once.
 
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => {
-  // Solution code here...
-};
+const count = (target, input) => input.flat().filter(element => element === target).length;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
