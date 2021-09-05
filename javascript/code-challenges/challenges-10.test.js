@@ -17,7 +17,8 @@ function returnTen(str) {
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named findMax that takes in a matrix of positive numbers and returns the number with the highest value.
+Write a function named findMax that takes in a matrix of positive numbers and returns the number
+with the highest value.
 
 For example:
 [
@@ -28,9 +29,7 @@ For example:
 
 return: 23
 ------------------------------------------------------------------------------------------------ */
-const findMax = (matrix) => {
-  // Solution code here...
-};
+const findMax = matrix => matrix.flat().sort((a, b) => b - a).shift();
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
