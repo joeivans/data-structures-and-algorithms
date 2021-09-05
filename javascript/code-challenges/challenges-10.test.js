@@ -123,7 +123,8 @@ const salesData = (hours, data) => hours.map((hour, hoursIndex) => ({
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
+Write a function named howManyTreats that will return the quantity of treats you need to pick up
+from the pet store today from this array. The structure of the array will not change.
 ------------------------------------------------------------------------------------------------ */
 
 const errands = [
@@ -141,9 +142,9 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
-};
+const howManyTreats = arr => arr
+  .flatMap(obj => obj.items.filter(item => item.name === 'Treats'))
+  .reduce((sum, item) => sum + item.quantity, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
