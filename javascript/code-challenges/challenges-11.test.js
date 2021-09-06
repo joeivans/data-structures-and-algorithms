@@ -84,16 +84,17 @@ The names should be combined into a single string with each character name separ
 For example, "C-3PO and Luke Skywalker".
 ------------------------------------------------------------------------------------------------ */
 
-let starWarsData = [{
-  name: 'Luke Skywalker',
-  height: '172',
-  mass: '77',
-  hair_color: 'blond',
-  skin_color: 'fair',
-  eye_color: 'blue',
-  birth_year: '19BBY',
-  gender: 'male',
-},
+const starWarsData = [
+  {
+    name: 'Luke Skywalker',
+    height: '172',
+    mass: '77',
+    hair_color: 'blond',
+    skin_color: 'fair',
+    eye_color: 'blue',
+    birth_year: '19BBY',
+    gender: 'male',
+  },
   {
     name: 'C-3PO',
     height: '167',
@@ -135,8 +136,28 @@ let starWarsData = [{
     gender: 'female'
   }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
+const findMaleAndFemale = data => {
+  /**
+   I believe a string builder is more efficient and scales better than
+   continually creating new concatenated strings with, say, using
+   Array.reduce().
+
+   I could be wrong though :D
+   */
+  const stringBuilder = [];
+
+  const isBinaryGender = (strIn) => strIn === 'male' || strIn === 'female';
+
+  Object
+    .entries(data)
+    .flat()
+    .forEach(__ => {
+      if (isBinaryGender(__.gender)) {
+        stringBuilder.push(__.name);
+      }
+    });
+
+  return stringBuilder.join(' and ');
 };
 
 /* ------------------------------------------------------------------------------------------------
