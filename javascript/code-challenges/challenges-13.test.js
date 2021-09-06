@@ -16,14 +16,13 @@ const longestString = arr => arr
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named firstLetters that takes in an array of strings and returns an array containing only the first letter of each string.
+Write a function named firstLetters that takes in an array of strings and returns an array
+containing only the first letter of each string.
 
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = (arr) => {
-  // Solution code here...
-};
+const firstLetters = arr => arr.map(strIn => strIn.charAt(0));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
