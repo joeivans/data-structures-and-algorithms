@@ -27,14 +27,14 @@ const firstLetters = arr => arr.map(strIn => strIn.charAt(0));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named findHappiness that takes in an array of strings and returns an array containing only the strings from the input array that contain ":)".
+Write a function named findHappiness that takes in an array of strings and returns an array
+containing only the strings from the input array that contain ":)".
 
-For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
+For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))']
+returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
-  // Solution code here...
-};
+const findHappiness = arr => arr.filter(strIn => strIn.includes(':)'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
