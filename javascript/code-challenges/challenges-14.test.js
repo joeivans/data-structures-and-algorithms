@@ -109,7 +109,8 @@ const biggerThanLuke = arr => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
-Write a function named sortBy that takes in an array of objects, each of which has a particular property, and sorts those objects by that property, lowest to highest, returning the same array.
+Write a function named sortBy that takes in an array of objects, each of which has a particular
+property, and sorts those objects by that property, lowest to highest, returning the same array.
 
 Here is an example of the input:
 [
@@ -121,9 +122,27 @@ Here is an example of the input:
 This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBy = (property, arr) => {
-  // Solution code here...
-};
+const sortBy = (property, arr) => arr
+  .sort((a, b) => {
+    switch (typeof a[property] && typeof b[property]) {
+      case typeof 0:
+        return a[property] - b[property];
+      case typeof '':
+        const left = a[property].toUpperCase();
+        const right = b[property].toUpperCase();
+
+        if (left < right) {
+          return -1;
+        }
+        if (left > right) {
+          return 1;
+        } else {
+          return 0;
+        }
+      default:
+        throw new Error('I can only compare numbers and strings!');
+    }
+  });
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
