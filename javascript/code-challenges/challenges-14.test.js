@@ -28,23 +28,25 @@ const toTitleCase = arr => arr.map(str => str.replace(/^./i, (match, idx) => mat
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named biggerThanLuke that, given the Star Wars data, below, returns the names of the characters whose mass is greater than Luke's.
+Write a function named biggerThanLuke that, given the Star Wars data, below, returns the names of
+the characters whose mass is greater than Luke's.
 
 The names should be combined into a single string with each character name separated by a dash.
 
 For example, "Lando Calrisian - Boba Fett - Princess Amidala".
 ------------------------------------------------------------------------------------------------ */
 
-let starWarsData = [{
-  name: 'Luke Skywalker',
-  height: '172',
-  mass: '77',
-  hair_color: 'blond',
-  skin_color: 'fair',
-  eye_color: 'blue',
-  birth_year: '19BBY',
-  gender: 'male',
-},
+const starWarsData = [
+  {
+    name: 'Luke Skywalker',
+    height: '172',
+    mass: '77',
+    hair_color: 'blond',
+    skin_color: 'fair',
+    eye_color: 'blue',
+    birth_year: '19BBY',
+    gender: 'male',
+  },
   {
     name: 'C-3PO',
     height: '167',
@@ -96,8 +98,13 @@ let starWarsData = [{
     gender: 'n/a'
   }];
 
-let biggerThanLuke = (arr) => {
-  // Solution code here...
+const biggerThanLuke = arr => {
+  const luke = arr.filter(character => character.name === 'Luke Skywalker')[0];
+
+  return arr
+    .filter(character => parseInt(character.mass) > parseInt(luke.mass))
+    .map(character => character.name)
+    .join(' - ');
 };
 
 /* ------------------------------------------------------------------------------------------------
