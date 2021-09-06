@@ -17,14 +17,13 @@ const screenForNames = arr => arr.filter(str => str.match(/^(Mr.\s|Mrs.\s|Ms.\s|
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named toTitleCase that takes in an array of strings and returns an array of strings with the first character in upper case and the rest as is.
+Write a function named toTitleCase that takes in an array of strings and returns an array of
+strings with the first character in upper case and the rest as is.
 
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = (arr) => {
-  // Solution code here...
-};
+const toTitleCase = arr => arr.map(str => str.replace(/^./i, (match, idx) => match.toUpperCase()));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
