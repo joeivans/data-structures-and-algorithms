@@ -50,14 +50,17 @@ const standardizePhoneNumbers = arr => arr.map(phoneNumber => phoneNumber.replac
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
-Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
+Write a function named onlyOddChars that takes in a string and returns only the odd-index
+characters from that string.
 
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
-const onlyOddChars = (str) => {
-  // Solution code here...
-};
+const onlyOddChars = str =>
+  Array
+    .from(str)
+    .filter((value, index) => index % 2 !== 0)
+    .join('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
