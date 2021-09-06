@@ -22,14 +22,13 @@ const validatePin = pin => ('' + pin).search(/^\d{4}$/) > -1;
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
-Write a function named validateWord that uses a regular expression pattern to validate that a word is between 5 and 10 characters long.
+Write a function named validateWord that uses a regular expression pattern to validate that a word
+is between 5 and 10 characters long.
 
 If the word is between 5 and 10 characters long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validateWord = (word) => {
-  // Solution code here...
-};
+const validateWord = word => /^[a-z]{5,10}$/i.test(word);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
