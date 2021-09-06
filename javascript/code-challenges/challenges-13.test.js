@@ -39,14 +39,13 @@ const findHappiness = arr => arr.filter(strIn => strIn.includes(':)'));
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
+Write a function named standardizePhoneNumbers that takes in an array of phone number strings in
+(XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
 
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
-};
+const standardizePhoneNumbers = arr => arr.map(phoneNumber => phoneNumber.replace(/[ )(-]/g, ''));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
