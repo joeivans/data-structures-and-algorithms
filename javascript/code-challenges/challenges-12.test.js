@@ -33,14 +33,13 @@ const validateWord = word => /^[a-z]{5,10}$/i.test(word);
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
-Write a function named hasNumber that uses a regular expression pattern to determine if a string has one or more letter followed by one or more digit.
+Write a function named hasNumber that uses a regular expression pattern to determine if a string
+has one or more letter followed by one or more digit.
 
 If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const hasNumber = (string) => {
-  // Solution code here...
-};
+const hasNumber = string => /[a-z]+[0-9]+/i.test(string);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
