@@ -63,7 +63,8 @@ const validateEmail = email => /^(\w+\.\w+|\w+)@\w+\.(net|com|org)$/i.test(email
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named validatePhoneNumber that accepts a phone number and determines if it is valid.
+Write a function named validatePhoneNumber that accepts a phone number and determines if it is
+valid.
 
 Acceptable formats include:
  - (555) 555-5555
@@ -81,9 +82,27 @@ Your function should include a single regular expression pattern that matches an
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
-};
+/*
+(555) 555-5555 --> true
+555 555-5555 --> true
+555-555-5555 --> true
+555 5555555 --> true
+5555555555 --> true
+234 567 8910 --> true
+abcdefghij --> false
+222 222 2222 ext. 2222 --> false
+(222 222-2222 --> false
+222 222-2222- --> false
+(222 222- 2222 --> false
+(222 222 -2222 --> false
+523 555--5555 --> false
+55555555555 --> false
+55555555555 --> false
+55555555555 --> false
+55_55_5555 --> false
+*/
+const validatePhoneNumber = phoneNumber => /(^\d{10}$)|(^\d{3}[ -]\d{3}[ -]?\d{4}$)|(^[(]\d{3}[)]( |)\d{3}[ -]\d{4}$)/
+  .test(phoneNumber);// I need to learn more about how to optimize regex. This is a bit repetitive.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
