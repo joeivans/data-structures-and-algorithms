@@ -1,5 +1,9 @@
 # Data Structures and Algorithms
 
+## Table of contents
+### JavaScript Challenges
+* [Array insert shift](./code-challenges/array-insert-shift/README.md)
+
 ## Language: `JavaScript`
 
 ### Folder and Challenge Setup
