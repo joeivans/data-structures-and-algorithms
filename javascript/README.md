@@ -1,89 +1,27 @@
-# Data Structures and Algorithms
+# Code Challenges
 
-## Table of contents
-### JavaScript Challenges
-* [Array insert shift](./code-challenges/array-insert-shift/README.md)
+Part of growing as a programmer is to practice, practice, practice. Throughout this course, you will complete a set of daily code challenges. Each set will contain up to ten problems.
 
-## Language: `JavaScript`
+The daily challenges will be posted by the instructor at the end of lecture every day. Plan to focus on this task with your partner every day after class until 6 p.m., completing as much as possible during this time, then complete the remainder of the challenges on your own, as needed.
 
-### Folder and Challenge Setup
+## Challenge Execution and Testing
 
-Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
+At the end of lecture each day, a new challenge will be published in Canvas. Copy the contents of the file into **this folder** in the `data-structures-and-algorithms` repository and work on the individual problems for the day. It's a good practice to add and commit regularly as you finish each problem in the day's challenge. When you are finished, push your branch to GitHub to create a PR.
 
-### Data Structure: New Implementation
+Every code challenge file is divided into two sections: challenges and tests. You will need to add your own solutions to each challenge but should not modify the tests in any way. These tests will ensure that your solution is meeting the requirements of each challenge. Even though you may not modify the tests, you are encouraged to read them to see what is being evaluated.
 
-- Create a new folder under the `javascript` level, with the name of the data structure and complete your implementation there
-  - i.e. `linked-list`
-- Implementation (the data structure "class")
-  - The implementation of the data structure must be named `index.js`
-  - Your implementation must be completed as a proper ES6 Class, and exported as a node module
-    - Class Name must be `ProperCase`
-    - Class Methods must be `camelCase`
+- Run your test from the root of the `data-structures-and-algorithms` repository, as follows
+  - Run All Tests: `npm test`
+  - Run a specific test: `npm test challenge-01`
 
-    ```javascript
-    class LinkedList {
-      constructor() {
-        // code
-      }
+### Continuous Testing
 
-      methodName() {
-        // code
-      }
+The repository contains a folder named `.github` which contains a configuration file that will automatically execute all of your tests when you check in your code to GitHub.
 
-    }
-    module.exports = LinkedList;
-    ```
+You can see the results of your tests online in the "Actions" tab of your repository on GitHub
 
-- Tests
-  - Create folder named `__tests__` and within it, a test file called `[data-structure].test.js`
-    - i.e. `__tests__/linked-list.test.js`
-    - Your tests will then need to require the data structure you're testing
-      - i.e. `const LinkedList = require('../index');
+> NOTE: This will be the source of your grades as well.
 
-### Data Structure: Extending an implementation
+## Assignment Submission
 
-- Work within the data structure implementation
-- Create a new method within the class that solves the code challenge
-  - Remember, you'll have access to `this` within your class methods
-- Tests
-  - You will have folder named `__tests__` and within it, a test file called `[data-structure].test.js`
-    - i.e. `__tests__/linked-list.test.js`
-    - Add to the tests written for this data structure to cover your new method(s)
-
-### Code Challenge / Algorithm
-
-Code challenges should be completed within a folder named `code-challenges` under the `javascript` level
-
-- Daily Setup:
-  - Create a new folder under the `javascript` level, with the name of the code challenge
-    - Each code challenge assignment identifies the branch name to use, for example 'find-maximum-value'
-    - For clarity, create your folder with the same name, ensuring that it's `kebab-cased`
-    - i.e. For a challenge named 'find-maximum-value', create the folder:`code-challenges/find-maximum-value`
-  - Code Challenge Implementation
-    - Each code challenge requires a function be written, for example "find maximum value"
-    - Name the actual challenge file with the name of the challenge, in `kebab-case`
-      - i.e. `find-maximum-value.js`
-    - Reminder: Your challenge file will then need to require the data structure you're using to implement
-      - i.e. `const LinkedList = require('../linked-list');
-    - Your challenge function name is up to you, but it's recommended that you use camel case
-      - i.e. `function findMaximumValue(list) { ... }`
-    - Be sure to export your function so that you can write tests
-  - Tests
-    - Create folder named `__tests__` and within it, a test file called `[challenge].test.js`
-      - i.e. `__tests__/find-maximum-value.test.js`
-      - Your test file would require the challenge file found in the directory above, which has your exported function
-        - i.e. `const reverse = require('../find-maximum-value.js');
-
-## Running Tests
-
-If you setup your folders according to the above guidelines, running tests becomes a matter of deciding which tests you want to execute.  Jest does a good job at finding the test files that match what you specify in the test command
-
-From the `data-structures-and-algorithms/javascript` folder, execute the following commands:
-
-- **Run every possible test** - `npm test`
-- **Run a test for a data structure** - `npm test linked-list`
-- **Run a test for a specific challenge** - `npm test reverse-ll`
-
-#### Live Tests
-
-Note that when you check your code into GitHub, all of your tests will automatically execute. These results should match your own, and will be found on the  **Actions** tab
+When you finish the assignment each day, make a new pull request from your daily challenge branch to your master branch and submit the PR URL in Canvas. You can submit a link to a pull request even if the pull request is closed.
