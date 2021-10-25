@@ -1,7 +1,9 @@
 'use strict';
 
 // Require the linked list implementation
-const LinkedList = require('../../linked-list');
+
+// todo: linkedlist class
+// const LinkedList = require('../../linked-list');
 
 
 /*
