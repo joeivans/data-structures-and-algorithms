@@ -4,6 +4,7 @@
 ### JavaScript Challenges
 * [Array insert shift](./javascript/array-insert-shift/README.md)
 * [LinkedList](./javascript/linked-list/README.md)
+* [LinkedList insertions](./javascript/linked-list-insertions/README.md)
 
 ## Language: `JavaScript`
 
