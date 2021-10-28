@@ -1,27 +1,37 @@
 'use strict';
 
-const Node = require('./Node');
+const linkedListNode = require('./LinkedListNode');
 
 class LinkedList {
 
+  #head = null;
+  #tail = null;
   count = 0;
-  #data = [];
 
   insert(value) {
-    // todo: guard clauses here
+    const newNode = new linkedListNode(value);
 
-    switch (this.count) {
-      case 0:
-        this.#data.push(new Node(value));
-        break;
-      default:
+    if (this.#head === null) {
+      this.#head = newNode;
+    } else {
+      this.#tail.next = newNode;
     }
 
+    this.#tail = newNode;
     this.count++;
   }
 
   getAll() {
-    return this.#data.map(_ => _.value);
+    return Array.from(this);
+  }
+
+  * [Symbol.iterator]() {
+    let cursor = this.#head;
+
+    while (cursor) {
+      yield cursor.value;
+      cursor = cursor.next;
+    }
   }
 }
 
