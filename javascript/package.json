@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "get-challenge": "`which bash` ./code-challenges/bin/get-challenge.sh",
-    "test": "jest --watch --verbose --coverage",
+    "test": "jest --verbose --coverage",
+    "test:watch": "jest --watch --verbose --coverage",
     "lint": "eslint '**/*.js'"
   },
   "author": "Joe Ivans",

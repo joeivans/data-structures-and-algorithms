@@ -28,11 +28,31 @@ describe('LinkedList operations', () => {
   });
 
   it('Can insert a value', () => {
+    // Arrange
+    // Act
     linkedList.insert('hello');
+
+    // Assert
     expect(linkedList.count).toBe(1);
     const getAllResult = linkedList.getAll();
     expect(getAllResult.length).toEqual(1);
     expect(getAllResult).toContain('hello');
+  });
+
+  it('Can insert multiple values', function () {
+    // Arrange
+    // Act
+    linkedList.insert('hello');
+    linkedList.insert('world');
+    linkedList.insert('hi');
+
+    // Assert
+    expect(linkedList.count).toBe(3);
+    const getAllResult = linkedList.getAll();
+    expect(getAllResult.length).toEqual(3);
+    expect(getAllResult).toContain('hello');
+    expect(getAllResult).toContain('world');
+    expect(getAllResult).toContain('hi');
   });
 
   it('Returns true when finding an existing value within the linked list', () => {
