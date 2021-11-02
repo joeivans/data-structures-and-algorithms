@@ -1,29 +1,35 @@
 'use strict';
 
 class PseudoQueue {
-  #forward = [];
-  #backward = [];
-  size = 0;
+  #DEFAULT_SIZE = 0;
+  #stackIn = [];
+  #stackOut = [];
+
+  size = this.#DEFAULT_SIZE;
 
   enqueue(data) {
-    const newForward = [];
-    const newBackward = [];
-
-    let _data = this.#forward.pop();
-    while (_data) {
-
-      _data = this.#forward.pop();
-    }
-
-    this.#forward = newForward;
-    this.#backward = newBackward;
+    this.#stackIn.push(data);
     this.size++;
   }
 
   dequeue() {
-    const result = this.#forward[0];
-    this.size--;
+    if (this.size === this.#DEFAULT_SIZE) {
+      throw new Error('Nothing to dequeue');
+    }
 
+    while (this.#stackIn.length) {
+      let popped = this.#stackIn.pop();
+      this.#stackOut.push(popped);
+    }
+
+    const result = this.#stackOut.pop();
+
+    while (this.#stackOut.length) {
+      let popped = this.#stackOut.pop();
+      this.#stackIn.push(popped);
+    }
+
+    this.size--;
     return result;
   }
 }
