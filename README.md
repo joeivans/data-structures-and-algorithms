@@ -1,7 +1,8 @@
 # Data Structures and Algorithms
 
-## Table of contents
 ### JavaScript Challenges
+
+[Code Challenge: Class 17 - Tree Breadth-First Visitor](./javascript/tree-breadth-first/README.md)
 
 ## Language: `JavaScript`
 
