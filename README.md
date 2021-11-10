@@ -2,6 +2,7 @@
 
 ## Table of contents
 ### JavaScript Challenges
+[Code Challenge: Class 01 - Array Reverse](./javascript/array-reverse/README.md)
 
 ## Language: `JavaScript`
 
@@ -14,7 +15,7 @@ Each type of code challenge has slightly different instructions. Please refer to
 - Create a new folder under the `javascript` level, with the name of the data structure and complete your implementation there
   - i.e. `linked-list`
 - Implementation (the data structure "class")
-  - The implementation of the data structure must be named `index.js`
+  - The implementation of the data structure must be named `ArrayExtensions.js`
   - Your implementation must be completed as a proper ES6 Class, and exported as a node module
     - Class Name must be `ProperCase`
     - Class Methods must be `camelCase`
