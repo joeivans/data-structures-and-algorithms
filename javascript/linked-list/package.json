@@ -1,0 +1,26 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "Data Structures, Algorithms, Code Challenges",
+  "main": "index.js",
+  "scripts": {
+    "get-challenge": "`which bash` ./code-challenges/bin/get-challenge.sh",
+    "test": "jest --watch --verbose --coverage",
+    "lint": "eslint '**/*.js'"
+  },
+  "author": "Joe Ivans",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "eslint": "^7.32.0",
+    "mustache": "^4.2.0",
+    "supertest": "^6.1.6"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
+    "jest-cli": "^27.3.1",
+    "prettier": "^2.4.1"
+  }
+}
