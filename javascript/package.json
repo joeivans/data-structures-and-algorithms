@@ -10,6 +10,7 @@
     "start:knary-tree": "node \"./trees/kary trees/index.js\"",
     "test": "jest --verbose --coverage",
     "test:code-challenge-class-01": "jest \"./javascript/array-reverse\" --verbose --coverage",
+    "test:code-challenge-class-02": "jest \"./javascript/array-insert-shift\" --verbose --coverage",
     "test:watch": "jest --watch --verbose --coverage",
     "lint": "eslint '**/*.js'"
   },
