@@ -4,7 +4,7 @@
 
 ### JavaScript Challenges
 
-[Code Challenge: Class 01 - Array Reverse](./javascript/array-reverse/README.md)
+[Code Challenge: Class 01 - Array Reverse](./javascript/array-reverse/README.md) \
 [Code Challenge: Class 02 - Array Insert Shift](./javascript/array-insert-shift/README.md)
 
 ## Language: `JavaScript`
