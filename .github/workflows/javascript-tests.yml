@@ -1,6 +1,6 @@
 name: Run Javascript Tests
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:
@@ -9,18 +9,24 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [ 12.x ]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: DSA unit tests ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
-      run: |
-        cd javascript
-        npm i
-        npm test
-      env:
-        CI: true
+      - uses: actions/checkout@v1
+      - name: Code 401 - Code Challenge Tests
+        run: |
+          cd javascript
+          npm i
+          npm run test:code-challenge-class-01
+        env:
+          CI: true
+      - name: DSA unit tests ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install, build, and test
+        run: |
+          cd javascript
+          npm run test
+        env:
+          CI: true
