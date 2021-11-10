@@ -14,7 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Code 401 - Code Challenge Tests
-        run: npm test:code-challenge-class-01
+        run: |
+          cd javascript
+          npm i
+          npm run test:code-challenge-class-01
         env:
           CI: true
       - name: DSA unit tests ${{ matrix.node-version }}
@@ -24,7 +27,6 @@ jobs:
       - name: npm install, build, and test
         run: |
           cd javascript
-          npm i
-          npm test
+          npm run test
         env:
           CI: true
