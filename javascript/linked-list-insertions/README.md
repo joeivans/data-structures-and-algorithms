@@ -1,2 +1,28 @@
 # LinkedList Insertions
-![Whiteboard of problem and solution domains](C:\dev\personal\code-401\data-structures-and-algorithms\javascript\linked-list-insertions\docs\images\whiteboard.jpg "Code challenge whiteboard")Whiteboard
+
+Adding various insertion functionality
+
+## Operations
+
+- `+ insert(T) : void // O(1)`
+
+## Properties
+
+- `+ value : T`
+- `+ next : node`
+
+## Insert Algorithm O(1)
+
+- construct new node(value)
+- new node.next = head
+- head = new node
+
+## Whiteboard
+
+![Whiteboard](docs/images/whiteboard.jpg)
+
+## Tests
+
+``` bash
+npm run 'test:code-challenge-class-06'
+```
