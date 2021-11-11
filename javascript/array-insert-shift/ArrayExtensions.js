@@ -1,24 +1,6 @@
 'use strict';
 
-class Utils {
-  /**
-   * Keep only the whole number portion of a number.
-   * @param value : number
-   * @returns {number}
-   */
-  static truncateToInteger(value) {
-    return Math.trunc(value);
-  }
-
-  /**
-   * True if the number is even.
-   * @param value : number
-   * @returns {boolean}
-   */
-  static isEven(value) {
-    return value % 2 === 0;
-  }
-}
+const Utils = require('../lib/Utils');
 
 class ArrayExtensions {
   constructor() {
