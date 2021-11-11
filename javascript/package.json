@@ -12,6 +12,7 @@
     "test:code-challenge-class-01": "jest \"./javascript/array-reverse\" --verbose --coverage",
     "test:code-challenge-class-02": "jest \"./javascript/array-insert-shift\" --verbose --coverage",
     "test:code-challenge-class-03": "jest \"./javascript/array-binary-search\" --verbose --coverage",
+    "test:code-challenge-class-04": "jest \"./javascript/array-binary-search\" --verbose --coverage",
     "test:watch": "jest --watch --verbose --coverage",
     "lint": "eslint '**/*.js'"
   },

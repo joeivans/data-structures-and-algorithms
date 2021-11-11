@@ -1,31 +1,68 @@
 'use strict';
 
-const linkedListNode = require('./LinkedListNode');
+const Node = require('./Node');
 
 class LinkedList {
+  #head;
+  count;
 
-  #head = null;
-  #tail = null;
-  count = 0;
+  constructor() {
+    this.clear();
+  }
+
+  clear() {
+    this.#head = null;
+    this.count = 0;
+  }
+
+  includes(value) {
+    for (const nodeValue of this.getAll()) {
+      if (nodeValue === value) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   insert(value) {
-    const newNode = new linkedListNode(value);
+    const newNode = new Node(value);
 
-    if (this.#head === null) {
-      this.#head = newNode;
-    } else {
-      this.#tail.next = newNode;
+    if (this.#head !== null) {
+      newNode.next = this.#head;
     }
 
-    this.#tail = newNode;
+    this.#head = newNode;
     this.count++;
   }
 
+  getAllReversed() {
+    return this.getAll();
+  }
+
+  toString() {
+    const stringBuilder = [];
+
+    for (const node of this.getAllReversed()) {
+      stringBuilder.push(`\{${node}\}`);
+    }
+
+    stringBuilder.push('NULL');
+
+    return stringBuilder.join('->');
+  }
+
   getAll() {
-    return Array.from(this);
+    return Array.from(this).reverse();
   }
 
   * [Symbol.iterator]() {
+    /*
+      - Symbol.iterator sets up the iterator for the class.
+
+      - The * before it means that this method is a generator and can use the
+      `yield` keyword.
+     */
+
     let cursor = this.#head;
 
     while (cursor) {
