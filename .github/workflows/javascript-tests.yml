@@ -19,6 +19,7 @@ jobs:
           npm i
           npm run test:code-challenge-class-01
           npm run test:code-challenge-class-02
+          npm run test:code-challenge-class-03
         env:
           CI: true
       - name: DSA unit tests ${{ matrix.node-version }}
