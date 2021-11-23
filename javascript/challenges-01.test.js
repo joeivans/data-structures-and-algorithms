@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -13,7 +11,7 @@ local array. Return the local array;
 const addOne = (arr) => {
   const result = [];
 
-  arr.forEach(element => result.push(element + 1));
+  arr.forEach((element) => result.push(element + 1));
 
   return result;
 };
@@ -31,7 +29,7 @@ local array. Return the local array;
 const addExclamation = (arr) => {
   const result = [];
 
-  arr.forEach(element => result.push(`${element}!`));
+  arr.forEach((element) => result.push(`${element}!`));
 
   return result;
 };
@@ -49,7 +47,7 @@ array. Return that local array.
 const allUpperCase = (arr) => {
   const result = [];
 
-  arr.forEach(element => result.push(element.toUpperCase()));
+  arr.forEach((element) => result.push(element.toUpperCase()));
 
   return result;
 };
@@ -66,14 +64,12 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 new array.
 ------------------------------------------------------------------------------------------------ */
 
-const greeting = (word) => {
-  return `${word.toUpperCase()}!`;
-};
+const greeting = (word) => `${word.toUpperCase()}!`;
 
 const speaker = (words, callback) => {
   const result = [];
 
-  words.forEach(word => result.push(callback(word)));
+  words.forEach((word) => result.push(callback(word)));
 
   return result;
 };
@@ -101,7 +97,7 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  for (let i = 0; i < times; i++){
+  for (let i = 0; i < times; i++) {
     callback(arr, num);
   }
 
@@ -130,7 +126,7 @@ the item is available, add it to your list. Return the final list.
 const createList = (availableItems) => {
   const result = [];
 
-  availableItems.forEach(item => {
+  availableItems.forEach((item) => {
     if (item.available) result.push(item.name);
   });
 
@@ -153,11 +149,11 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   const result = [];
-  const IS_DIVISIBLE_BY_THREE = "Fizz";
-  const IS_DIVISIBLE_BY_FIVE = "Buzz";
-  const IS_DIVISIBLE_BY_THREE_AND_FIVE = "Fizz Buzz";
+  const IS_DIVISIBLE_BY_THREE = 'Fizz';
+  const IS_DIVISIBLE_BY_FIVE = 'Buzz';
+  const IS_DIVISIBLE_BY_THREE_AND_FIVE = 'Fizz Buzz';
 
-  arr.forEach(number => {
+  arr.forEach((number) => {
     if (number % 3 === 0 && number % 5 === 0) result.push(IS_DIVISIBLE_BY_THREE_AND_FIVE);
     else if (number % 3 === 0) result.push(IS_DIVISIBLE_BY_THREE);
     else if (number % 5 === 0) result.push(IS_DIVISIBLE_BY_FIVE);

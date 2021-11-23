@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -7,7 +5,7 @@ Write a function called addTwo that takes in an array and adds two to every valu
 Place the new value in a new array. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
-const addTwo = arr => {
+const addTwo = (arr) => {
   const result = [];
 
   for (let i = 0; i < arr.length; i++) {
@@ -26,7 +24,7 @@ containing only the numbers.
 For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const typeNum = arr => arr.filter(element => {
+const typeNum = (arr) => arr.filter((element) => {
   if (typeof element === typeof 1) return element;
 });
 
@@ -39,7 +37,7 @@ an array containing only strings that contain 'and' within the string.
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
-const containsAnd = arr => arr.filter(element => {
+const containsAnd = (arr) => arr.filter((element) => {
   if (element.indexOf('and') > -1) return element;
 });
 
@@ -52,7 +50,7 @@ an array containing only the odd integers.
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
-const oddValues = arr => arr.filter(element => {
+const oddValues = (arr) => arr.filter((element) => {
   if (element % 2 !== 0) return element;
 });
 
@@ -65,10 +63,9 @@ array of all the elements in the second array that are not included in the first
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) =>
-  arr.filter(element => {
-    if (!forbiddenValues.includes(element)) return element;
-  });
+const notInFirstArray = (forbiddenValues, arr) => arr.filter((element) => {
+  if (!forbiddenValues.includes(element)) return element;
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -179,7 +176,7 @@ const characters = [
   },
 ];
 
-const getCharactersWithoutChildren = arr => {
+const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
 };
 
@@ -193,7 +190,7 @@ any non-numeric values, then uses map to generate a new array containing the str
 For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 'odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOddNumericValues = arr => {
+const evenOddNumericValues = (arr) => {
   // Solution code here...
 };
 
@@ -270,14 +267,16 @@ xdescribe('Testing challenge 6', () => {
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75)).toStrictEqual([{
       stat: {
         url: 'https://pokeapi.co/api/v2/stat/5/',
-        name: 'special-defense'
-      }, effort: 2, baseStat: 110
+        name: 'special-defense',
+      },
+      effort: 2,
+      baseStat: 110,
     }]);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 75).length).toStrictEqual(1);
     expect(getBaseStatGreaterThan(snorlaxData.stats, 110)).toStrictEqual([]);
   });
   test('It should work for non-Snorlax data', () => {
-    expect(getBaseStatGreaterThan([{baseStat: 10}, {baseStat: -85}, {baseStat: 0}, {baseStat: -50}], -60)).toStrictEqual([{baseStat: 10}, {baseStat: 0}, {baseStat: -50}]);
+    expect(getBaseStatGreaterThan([{ baseStat: 10 }, { baseStat: -85 }, { baseStat: 0 }, { baseStat: -50 }], -60)).toStrictEqual([{ baseStat: 10 }, { baseStat: 0 }, { baseStat: -50 }]);
   });
 });
 
@@ -294,10 +293,10 @@ xdescribe('Testing challenge 7', () => {
 
   test('It should work for non-snorlax data', () => {
     expect(getStatName([
-      {baseStat: 10, stat: {name: 'one'}},
-      {baseStat: -85, stat: {name: 'two'}},
-      {baseStat: 0, stat: {name: 'three'}},
-      {baseStat: -50, stat: {name: 'four'}}
+      { baseStat: 10, stat: { name: 'one' } },
+      { baseStat: -85, stat: { name: 'two' } },
+      { baseStat: 0, stat: { name: 'three' } },
+      { baseStat: -50, stat: { name: 'four' } },
     ], -60)).toStrictEqual(['one', 'three', 'four']);
   });
 });
@@ -307,8 +306,8 @@ xdescribe('Testing challenge 8', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([{
       name: 'Sansa',
       spouse: 'Tyrion',
-      house: 'Stark'
-    }, {name: 'Jon', spouse: null, house: 'Snow'}]);
+      house: 'Stark',
+    }, { name: 'Jon', spouse: null, house: 'Snow' }]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
   });
 });

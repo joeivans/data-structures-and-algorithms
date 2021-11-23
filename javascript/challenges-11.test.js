@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -20,7 +18,7 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj) {
-  return Object.entries(obj).map(entry => `<li>${entry[0]}: ${entry[1]}</li>`);
+  return Object.entries(obj).map((entry) => `<li>${entry[0]}: ${entry[1]}</li>`);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -34,7 +32,7 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => input.flat().filter(element => element === target).length;
+const count = (target, input) => input.flat().filter((element) => element === target).length;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -48,7 +46,7 @@ to use the same method more than once.
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = input => input.flat().reduce((sum, num) => sum += num, 0);
+const totalSum = (input) => input.flat().reduce((sum, num) => sum += num, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -63,14 +61,13 @@ arrays.
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
-const divisibleByFiveTwoToThePower = input => {
+const divisibleByFiveTwoToThePower = (input) => {
   const isDivisibleByFive = (value) => typeof value === typeof 1 && value % 5 < 1;
 
   return input
-    .map(values => values
-      .filter(value => isDivisibleByFive(value))
-      .map(value => 2 ** value)
-    );
+    .map((values) => values
+      .filter((value) => isDivisibleByFive(value))
+      .map((value) => 2 ** value));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,7 +100,7 @@ const starWarsData = [
     skin_color: 'gold',
     eye_color: 'yellow',
     birth_year: '112BBY',
-    gender: 'n/a'
+    gender: 'n/a',
   },
   {
     name: 'R2-D2',
@@ -113,7 +110,7 @@ const starWarsData = [
     skin_color: 'white, blue',
     eye_color: 'red',
     birth_year: '33BBY',
-    gender: 'n/a'
+    gender: 'n/a',
   },
   {
     name: 'Darth Vader',
@@ -123,7 +120,7 @@ const starWarsData = [
     skin_color: 'white',
     eye_color: 'yellow',
     birth_year: '41.9BBY',
-    gender: 'male'
+    gender: 'male',
   },
   {
     name: 'Leia Organa',
@@ -133,10 +130,10 @@ const starWarsData = [
     skin_color: 'light',
     eye_color: 'brown',
     birth_year: '19BBY',
-    gender: 'female'
+    gender: 'female',
   }];
 
-const findMaleAndFemale = data => {
+const findMaleAndFemale = (data) => {
   /**
    I believe a string builder is more efficient and scales better than
    continually creating new concatenated strings with, say, using
@@ -151,7 +148,7 @@ const findMaleAndFemale = data => {
   Object
     .entries(data)
     .flat()
-    .forEach(__ => {
+    .forEach((__) => {
       if (isBinaryGender(__.gender)) {
         stringBuilder.push(__.name);
       }
@@ -168,10 +165,11 @@ combination of filter, map and reduce to return the name of the character who is
 height.
 ------------------------------------------------------------------------------------------------ */
 
-const findShortest = data => data
-  .reduce((shortest, character) =>
-      parseInt(character.height) < parseInt(shortest.height) ? character : shortest
-    , data[0])
+const findShortest = (data) => data
+  .reduce(
+    (shortest, character) => (parseInt(character.height) < parseInt(shortest.height) ? character : shortest),
+    data[0],
+  )
   .name;
 
 /* ------------------------------------------------------------------------------------------------
@@ -187,8 +185,8 @@ Run your tests from the console: jest challenges-10.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return a list of key value pairs inside of li tags', () => {
-    expect(transformToLis({name: 'bob', age: 32})[0]).toStrictEqual(`<li>name: bob</li>`);
-    expect(transformToLis({name: 'bob', age: 32})[1]).toStrictEqual(`<li>age: 32</li>`);
+    expect(transformToLis({ name: 'bob', age: 32 })[0]).toStrictEqual('<li>name: bob</li>');
+    expect(transformToLis({ name: 'bob', age: 32 })[1]).toStrictEqual('<li>age: 32</li>');
     expect(transformToLis({})).toStrictEqual([]);
   });
 });
@@ -207,7 +205,7 @@ describe('Testing challenge 2', () => {
 
 describe('Testing challenge 3', () => {
   test('It should add all the numbers in the arrays', () => {
-    const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]];
+    const nums = [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6]];
 
     expect(totalSum(nums)).toStrictEqual(66);
   });
@@ -230,9 +228,9 @@ describe('Testing challenge 4', () => {
 describe('Testing challenge 5', () => {
   test('It should return only characters that are male or female', () => {
     expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
-    expect(findMaleAndFemale([{name: 'person', gender: 'female'}, {gender: 'lol'}, {
+    expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, {
       name: 'persontwo',
-      gender: 'male'
+      gender: 'male',
     }])).toStrictEqual('person and persontwo');
   });
 });

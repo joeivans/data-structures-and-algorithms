@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 1 - Review
@@ -10,11 +8,11 @@ this problem.
 
 ------------------------------------------------------------------------------------------------ */
 
-const raisedToTheThird = arr => {
+const raisedToTheThird = (arr) => {
   const result = [];
   const EXPONENT = 3;
 
-  arr.forEach(base => result.push(Math.pow(base, EXPONENT)));
+  arr.forEach((base) => result.push(base ** EXPONENT));
 
   return result;
 };
@@ -26,7 +24,7 @@ Write a function named addOne that, given an array of numbers, uses map to retur
 each value simply incremented by 1.
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = arr => arr.map(number => number + 1);
+const addOne = (arr) => arr.map((number) => number + 1);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -35,7 +33,7 @@ Write a function named addQuestion that, given an array of strings, uses map to 
 containing each string followed by a question mark character.
 ------------------------------------------------------------------------------------------------ */
 
-const addQuestion = arr => arr.map(strIn => `${strIn}?`);
+const addQuestion = (arr) => arr.map((strIn) => `${strIn}?`);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -49,12 +47,12 @@ You may choose to complete this challenge using a for loop, for...in syntax, or 
 For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and 2 ^ 3 = 8.
 ------------------------------------------------------------------------------------------------ */
 
-const forLoopTwoToThe = arr => {
+const forLoopTwoToThe = (arr) => {
   const result = [];
   const BASE = 2;
 
   for (const exponent of arr) {
-    result.push(Math.pow(BASE, exponent));
+    result.push(BASE ** exponent);
   }
 
   return result;
@@ -67,11 +65,11 @@ Write a function named forEachTwoToThe that produces the same output as your for
 function from challenge 4, but uses forEach instead of a for loop.
 ------------------------------------------------------------------------------------------------ */
 
-const forEachTwoToThe = arr => {
+const forEachTwoToThe = (arr) => {
   const result = [];
   const BASE = 2;
 
-  arr.forEach(exponent => result.push(Math.pow(BASE, exponent)));
+  arr.forEach((exponent) => result.push(BASE ** exponent));
 
   return result;
 };
@@ -84,7 +82,7 @@ from challenge 4 and your forEachTwoToThe function from challenge 5, but uses ma
 loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
-const mapTwoToThe = arr => arr.map(exponent => Math.pow(2, exponent));
+const mapTwoToThe = (arr) => arr.map((exponent) => 2 ** exponent);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -98,7 +96,7 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
-const charCode = arr => arr.map(char => char.charCodeAt());
+const charCode = (arr) => arr.map((char) => char.charCodeAt());
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -112,12 +110,11 @@ its place.
 For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
-const evenOdd = arr =>
-  arr.map(number => {
-    if (typeof number === typeof 1) return number % 2 === 0 ? 'even' : 'odd';
+const evenOdd = (arr) => arr.map((number) => {
+  if (typeof number === typeof 1) return number % 2 === 0 ? 'even' : 'odd';
 
-    else return 'N/A';
-  });
+  return 'N/A';
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -162,7 +159,7 @@ const snorlaxAbilities = {
   weight: 4600,
 };
 
-const extractAbilities = arr => arr.map(abilityDecorator => abilityDecorator.ability.name);
+const extractAbilities = (arr) => arr.map((abilityDecorator) => abilityDecorator.ability.name);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -208,7 +205,7 @@ const snorlaxStats = {
   weight: 4600,
 };
 
-const extractStats = arr => arr.map(statDecorator => ({
+const extractStats = (arr) => arr.map((statDecorator) => ({
   name: statDecorator.stat.name,
   total: statDecorator.effort + statDecorator.baseStat,
 }));
@@ -313,9 +310,9 @@ describe('Testing challenge 9', () => {
 describe('Testing challenge 10', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
-      {name: 'speed', total: 35,},
-      {name: 'special-defense', total: 112,},
-      {name: 'special-attack', total: 74,},
+      { name: 'speed', total: 35 },
+      { name: 'special-defense', total: 112 },
+      { name: 'special-attack', total: 74 },
     ]);
     expect(extractStats(snorlaxStats.stats).length).toStrictEqual(3);
   });

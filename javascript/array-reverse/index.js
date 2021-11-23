@@ -1,5 +1,3 @@
-'use strict';
-
 // Auto-load the Array class extensions
 const _ = new (require('./ArrayExtensions'))();
 

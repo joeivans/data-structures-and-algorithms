@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -23,14 +21,13 @@ For example:
 Returns: ['dyoll', 'eimaj'];
 ------------------------------------------------------------------------------------------------ */
 
-const getNames = arr =>
-  arr.map(person => {
-    let reversedName = [];
-    for (let i = 0; i < person.name.length; i++) {
-      reversedName.push(person.name[person.name.length - 1 - i]);
-    }
-    return reversedName.join('');
-  });
+const getNames = (arr) => arr.map((person) => {
+  const reversedName = [];
+  for (let i = 0; i < person.name.length; i++) {
+    reversedName.push(person.name[person.name.length - 1 - i]);
+  }
+  return reversedName.join('');
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -40,7 +37,7 @@ original source string should not be modified.
 
 ------------------------------------------------------------------------------------------------ */
 
-const appendTheEnd = str => `${str} The end.`;
+const appendTheEnd = (str) => `${str} The end.`;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -57,7 +54,7 @@ appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
-const appendFirstToLast = arr => arr.push(arr[0]);
+const appendFirstToLast = (arr) => arr.push(arr[0]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -93,7 +90,7 @@ setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
-const setStatusAsAuthor = people => people.forEach(person => person.isAuthor = true);
+const setStatusAsAuthor = (people) => people.forEach((person) => person.isAuthor = true);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -111,7 +108,7 @@ append(a, b);
 console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
-const append = (arr1, arr2) => arr2.forEach(value => arr1.push(value));
+const append = (arr1, arr2) => arr2.forEach((value) => arr1.push(value));
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -126,7 +123,7 @@ Run your tests from the console: jest challenges-02.test.js
 
 describe('Testing challenge 1', () => {
   test('It returns an array of names reversed', () => {
-    expect(getNames([{name:'lloyd', age: 32, shoeSize: 12}, {name:'jamie', age:21, shoeSize: 8}])).toStrictEqual(['dyoll', 'eimaj']);
+    expect(getNames([{ name: 'lloyd', age: 32, shoeSize: 12 }, { name: 'jamie', age: 21, shoeSize: 8 }])).toStrictEqual(['dyoll', 'eimaj']);
     expect(getNames([])).toStrictEqual([]);
   });
 });

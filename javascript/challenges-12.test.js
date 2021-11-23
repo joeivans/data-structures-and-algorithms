@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -7,7 +5,7 @@ Write a function named replaceZeros that, given a string, uses Regex to replace 
 word 'zero'.
 ------------------------------------------------------------------------------------------------ */
 
-const replaceZeros = strIn => strIn.replace(/0/g, 'zero');
+const replaceZeros = (strIn) => strIn.replace(/0/g, 'zero');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -17,7 +15,7 @@ Write a function named validatePin that uses a regular expression pattern to val
 If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validatePin = pin => ('' + pin).search(/^\d{4}$/) > -1;
+const validatePin = (pin) => (`${pin}`).search(/^\d{4}$/) > -1;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -28,7 +26,7 @@ is between 5 and 10 characters long.
 If the word is between 5 and 10 characters long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const validateWord = word => /^[a-z]{5,10}$/i.test(word);
+const validateWord = (word) => /^[a-z]{5,10}$/i.test(word);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -39,7 +37,7 @@ has one or more letter followed by one or more digit.
 If it does, return true. If not, return false.
 ------------------------------------------------------------------------------------------------ */
 
-const hasNumber = string => /[a-z]+[0-9]+/i.test(string);
+const hasNumber = (string) => /[a-z]+[0-9]+/i.test(string);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -58,7 +56,7 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
-const validateEmail = email => /^(\w+\.\w+|\w+)@\w+\.(net|com|org)$/i.test(email);
+const validateEmail = (email) => /^(\w+\.\w+|\w+)@\w+\.(net|com|org)$/i.test(email);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -101,7 +99,7 @@ abcdefghij --> false
 55555555555 --> false
 55_55_5555 --> false
 */
-const validatePhoneNumber = phoneNumber => /(^\d{10}$)|(^\d{3}[ -]\d{3}[ -]?\d{4}$)|(^[(]\d{3}[)]( |)\d{3}[ -]\d{4}$)/
+const validatePhoneNumber = (phoneNumber) => /(^\d{10}$)|(^\d{3}[ -]\d{3}[ -]?\d{4}$)|(^[(]\d{3}[)]( |)\d{3}[ -]\d{4}$)/
   .test(phoneNumber);// I need to learn more about how to optimize regex. This is a bit repetitive.
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,7 +111,7 @@ For example, findTagNames(['<h1>Hello, world!</h1>', '<p>Welcome to my site</p>'
 findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>']) returns ['/h1', '/div', '/p'].
 ------------------------------------------------------------------------------------------------ */
 
-const findTagNames = elements => {
+const findTagNames = (elements) => {
   // Solution code here...
 };
 

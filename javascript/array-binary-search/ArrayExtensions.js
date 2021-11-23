@@ -1,5 +1,3 @@
-'use strict';
-
 const NOT_FOUND = -1;
 const Utils = require('../lib/Utils');
 
@@ -43,7 +41,7 @@ class ArrayExtensions {
 
 module.exports = {
   Constants: {
-    NOT_FOUND
+    NOT_FOUND,
   },
-  ArrayExtensions: (() => new ArrayExtensions())()
+  ArrayExtensions: (() => new ArrayExtensions())(),
 };

@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -7,11 +5,13 @@ Write a function named longestString that takes in an array of strings and retur
 position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
-const longestString = arr => arr
-  .reduce((maxStr, str, idx) => str.length > maxStr.strLen
-      ? {strLen: str.length, idx: idx}
-      : maxStr
-    , {strLen: -1, idx: -1}).idx;
+const longestString = (arr) => arr
+  .reduce(
+    (maxStr, str, idx) => (str.length > maxStr.strLen
+      ? { strLen: str.length, idx }
+      : maxStr),
+    { strLen: -1, idx: -1 },
+  ).idx;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -22,7 +22,7 @@ containing only the first letter of each string.
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = arr => arr.map(strIn => strIn.charAt(0));
+const firstLetters = (arr) => arr.map((strIn) => strIn.charAt(0));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -34,7 +34,7 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))']
 returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = arr => arr.filter(strIn => strIn.includes(':)'));
+const findHappiness = (arr) => arr.filter((strIn) => strIn.includes(':)'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -45,7 +45,7 @@ Write a function named standardizePhoneNumbers that takes in an array of phone n
 For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
-const standardizePhoneNumbers = arr => arr.map(phoneNumber => phoneNumber.replace(/[ )(-]/g, ''));
+const standardizePhoneNumbers = (arr) => arr.map((phoneNumber) => phoneNumber.replace(/[ )(-]/g, ''));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -56,11 +56,10 @@ characters from that string.
 For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
-const onlyOddChars = str =>
-  Array
-    .from(str)
-    .filter((value, index) => index % 2 !== 0)
-    .join('');
+const onlyOddChars = (str) => Array
+  .from(str)
+  .filter((value, index) => index % 2 !== 0)
+  .join('');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -69,7 +68,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
-const allHappy = arr => arr.every(str => str.includes(':)'));
+const allHappy = (arr) => arr.every((str) => str.includes(':)'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -242,13 +241,13 @@ xdescribe('Testing challenge 9', () => {
     const roster = [
       ['Michelle', 'Allie', 'Brook TESTING'],
       ['Brook Riggio', 'hey look it\'s Brook', 'Jennifer'],
-      ['Nicholas', 'Sam', 'Scott', 'Vinicio']
+      ['Nicholas', 'Sam', 'Scott', 'Vinicio'],
     ];
 
     expect(unenrollBrook(roster)).toStrictEqual([
       ['Michelle', 'Allie'],
       ['Jennifer'],
-      ['Nicholas', 'Sam', 'Scott', 'Vinicio']
+      ['Nicholas', 'Sam', 'Scott', 'Vinicio'],
     ]);
     expect(unenrollBrook([['Brook', 'person'], [], ['person', 'person', 'Brook']])).toStrictEqual([['person'], [], ['person', 'person']]);
     expect(unenrollBrook([])).toStrictEqual([]);

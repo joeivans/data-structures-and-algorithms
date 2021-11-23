@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -26,7 +24,7 @@ function lower(str) {
 const updateAnimal = (arr, callback) => {
   const result = [];
 
-  arr.forEach(item => result.push(callback(item)));
+  arr.forEach((item) => result.push(callback(item)));
 
   return result;
 };
@@ -275,15 +273,15 @@ describe('Testing challenge 5', () => {
 describe('Testing challenge 6', () => {
   test('It should sort items by their price', () => {
     expect(sortByPrice([
-      {name: 'Sweatshirt', price: 45},
-      {name: 'Bookmark', price: 2.50},
-      {name: 'Tote bag', price: 15}
+      { name: 'Sweatshirt', price: 45 },
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 },
     ])).toStrictEqual([
-      {name: 'Bookmark', price: 2.50},
-      {name: 'Tote bag', price: 15},
-      {name: 'Sweatshirt', price: 45},
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 },
+      { name: 'Sweatshirt', price: 45 },
     ]);
-    expect(sortByPrice([{price: 12}, {price: 10}])).toStrictEqual([{price: 10}, {price: 12}]);
+    expect(sortByPrice([{ price: 12 }, { price: 10 }])).toStrictEqual([{ price: 10 }, { price: 12 }]);
     expect(sortByPrice([])).toStrictEqual([]);
   });
 });
@@ -323,8 +321,8 @@ xdescribe('Testing challenge 10', () => {
       new Person('Stan', 'Seattle', 67),
       new Person('Wes', 'Washington', 25),
     ]);
-    expect(sortPeople([{lastName: 'banana'}, {lastName: 'apple'}]))
-      .toStrictEqual([{lastName: 'apple'}, {lastName: 'banana'}]);
+    expect(sortPeople([{ lastName: 'banana' }, { lastName: 'apple' }]))
+      .toStrictEqual([{ lastName: 'apple' }, { lastName: 'banana' }]);
   });
 });
 
@@ -344,8 +342,8 @@ xdescribe('Testing challenge 11', () => {
       new Person('Charles', 'Codefellows', 29),
       new Person('Charlie', 'Codefellows', 21),
     ]);
-    expect(sortPeopleBetter([{firstName: 'andrew', lastName: 'apple'}, {firstName: 'andre', lastName: 'apple'}]))
-      .toStrictEqual([{firstName: 'andre', lastName: 'apple'}, {firstName: 'andrew', lastName: 'apple'}]);
+    expect(sortPeopleBetter([{ firstName: 'andrew', lastName: 'apple' }, { firstName: 'andre', lastName: 'apple' }]))
+      .toStrictEqual([{ firstName: 'andre', lastName: 'apple' }, { firstName: 'andrew', lastName: 'apple' }]);
   });
 });
 
