@@ -1,9 +1,7 @@
-'use strict';
-
 const StackQueueBrackets = require('../StackQueueBrackets');
 
-describe('StackQueueBrackets', function () {
-  it('should validate single bracket pairs of each of the 3 domain types', function () {
+describe('StackQueueBrackets', () => {
+  it('should validate single bracket pairs of each of the 3 domain types', () => {
     // Given
     // When
     // Then
@@ -20,7 +18,7 @@ describe('StackQueueBrackets', function () {
     expect(StackQueueBrackets.validateBrackets('Hello {} world')).toBe(true);
   });
 
-  it('should not validate mixed single bracket pairs of each of the 3 domain types', function () {
+  it('should not validate mixed single bracket pairs of each of the 3 domain types', () => {
     // Given
     // When
     // Then
@@ -37,7 +35,7 @@ describe('StackQueueBrackets', function () {
     expect(StackQueueBrackets.validateBrackets('Hello [} world')).toBe(false);
   });
 
-  it('should not validate unpaired brackets of each of the 3 domain types', function () {
+  it('should not validate unpaired brackets of each of the 3 domain types', () => {
     // Given
     // When
     // Then

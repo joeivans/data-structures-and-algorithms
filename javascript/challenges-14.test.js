@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -11,8 +9,7 @@ new array of only those strings that match the following rules:
 
 ------------------------------------------------------------------------------------------------ */
 
-const screenForNames = arr => arr.filter(str => str.match(/^(Mr.\s|Mrs.\s|Ms.\s|Dr.\s)\b\w+/));
-
+const screenForNames = (arr) => arr.filter((str) => str.match(/^(Mr.\s|Mrs.\s|Ms.\s|Dr.\s)\b\w+/));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -23,7 +20,7 @@ strings with the first character in upper case and the rest as is.
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = arr => arr.map(str => str.replace(/^./i, (match, idx) => match.toUpperCase()));
+const toTitleCase = (arr) => arr.map((str) => str.replace(/^./i, (match, idx) => match.toUpperCase()));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -55,7 +52,7 @@ const starWarsData = [
     skin_color: 'gold',
     eye_color: 'yellow',
     birth_year: '112BBY',
-    gender: 'n/a'
+    gender: 'n/a',
   },
   {
     name: 'R2-D2',
@@ -65,7 +62,7 @@ const starWarsData = [
     skin_color: 'white, blue',
     eye_color: 'red',
     birth_year: '33BBY',
-    gender: 'n/a'
+    gender: 'n/a',
   },
   {
     name: 'Darth Vader',
@@ -75,7 +72,7 @@ const starWarsData = [
     skin_color: 'white',
     eye_color: 'yellow',
     birth_year: '41.9BBY',
-    gender: 'male'
+    gender: 'male',
   },
   {
     name: 'Leia Organa',
@@ -85,7 +82,7 @@ const starWarsData = [
     skin_color: 'light',
     eye_color: 'brown',
     birth_year: '19BBY',
-    gender: 'female'
+    gender: 'female',
   },
   {
     name: 'Pex Kylar',
@@ -95,15 +92,15 @@ const starWarsData = [
     skin_color: 'brown',
     eye_color: 'none',
     birth_year: '27BBY',
-    gender: 'n/a'
+    gender: 'n/a',
   }];
 
-const biggerThanLuke = arr => {
-  const luke = arr.filter(character => character.name === 'Luke Skywalker')[0];
+const biggerThanLuke = (arr) => {
+  const luke = arr.filter((character) => character.name === 'Luke Skywalker')[0];
 
   return arr
-    .filter(character => parseInt(character.mass) > parseInt(luke.mass))
-    .map(character => character.name)
+    .filter((character) => parseInt(character.mass) > parseInt(luke.mass))
+    .map((character) => character.name)
     .join(' - ');
 };
 
@@ -136,9 +133,9 @@ const sortBy = (property, arr) => arr
         }
         if (left > right) {
           return 1;
-        } else {
-          return 0;
         }
+        return 0;
+
       default:
         throw new Error('I can only compare numbers and strings!');
     }
@@ -156,7 +153,7 @@ http://www.insecure.com returns false because the URL is not secure
 https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
-const isSecure = url => url.toLowerCase().startsWith('https://');
+const isSecure = (url) => url.toLowerCase().startsWith('https://');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -182,24 +179,20 @@ Here is a sample board:
 ];
 ------------------------------------------------------------------------------------------------ */
 
-const detectTicTacToeWin = board => {
-  const threeInALineNotEmptyStrings = (a, b, c) =>
-    a === b && b === c && c !== '' &&
-    a.toUpperCase() === b.toUpperCase() && b.toUpperCase() === c.toUpperCase();
+const detectTicTacToeWin = (board) => {
+  const threeInALineNotEmptyStrings = (a, b, c) => a === b && b === c && c !== ''
+    && a.toUpperCase() === b.toUpperCase() && b.toUpperCase() === c.toUpperCase();
 
-  const winByThreeHorizontal =
-    threeInALineNotEmptyStrings(board[0][0], board[0][1], board[0][2]) ||
-    threeInALineNotEmptyStrings(board[1][0], board[1][1], board[1][2]) ||
-    threeInALineNotEmptyStrings(board[2][0], board[2][1], board[2][2]);
+  const winByThreeHorizontal = threeInALineNotEmptyStrings(board[0][0], board[0][1], board[0][2])
+    || threeInALineNotEmptyStrings(board[1][0], board[1][1], board[1][2])
+    || threeInALineNotEmptyStrings(board[2][0], board[2][1], board[2][2]);
 
-  const winByThreeVertical =
-    threeInALineNotEmptyStrings(board[0][0], board[1][0], board[2][0]) ||
-    threeInALineNotEmptyStrings(board[0][1], board[1][1], board[2][1]) ||
-    threeInALineNotEmptyStrings(board[0][2], board[1][2], board[2][2]);
+  const winByThreeVertical = threeInALineNotEmptyStrings(board[0][0], board[1][0], board[2][0])
+    || threeInALineNotEmptyStrings(board[0][1], board[1][1], board[2][1])
+    || threeInALineNotEmptyStrings(board[0][2], board[1][2], board[2][2]);
 
-  const winByThreeDiagonal =
-    threeInALineNotEmptyStrings(board[0][0], board[1][1], board[2][2]) ||
-    threeInALineNotEmptyStrings(board[2][0], board[1][1], board[0][2]);
+  const winByThreeDiagonal = threeInALineNotEmptyStrings(board[0][0], board[1][1], board[2][2])
+    || threeInALineNotEmptyStrings(board[2][0], board[1][1], board[0][2]);
 
   return winByThreeHorizontal || winByThreeVertical || winByThreeDiagonal;
 };
@@ -240,36 +233,32 @@ describe('Testing challenge 3', () => {
 
 describe('Testing challenge 4', () => {
   test('It should sort items by a price', () => {
-
     expect(sortBy('price', [
-      {name: 'Sweatshirt', price: 45},
-      {name: 'Bookmark', price: 2.50},
-      {name: 'Tote bag', price: 15}
+      { name: 'Sweatshirt', price: 45 },
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 },
     ])).toStrictEqual([
-      {name: 'Bookmark', price: 2.50},
-      {name: 'Tote bag', price: 15},
-      {name: 'Sweatshirt', price: 45},
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 },
+      { name: 'Sweatshirt', price: 45 },
     ]);
-
   });
 
   test('It should sort items by name', () => {
-
     expect(sortBy('name', [
-      {name: 'Sweatshirt', price: 45},
-      {name: 'Bookmark', price: 2.50},
-      {name: 'Tote bag', price: 15}
+      { name: 'Sweatshirt', price: 45 },
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Tote bag', price: 15 },
     ])).toStrictEqual([
-      {name: 'Bookmark', price: 2.50},
-      {name: 'Sweatshirt', price: 45},
-      {name: 'Tote bag', price: 15},
+      { name: 'Bookmark', price: 2.50 },
+      { name: 'Sweatshirt', price: 45 },
+      { name: 'Tote bag', price: 15 },
     ]);
   });
 });
 
 describe('Testing challenge 5', () => {
   test('It should check if url is https', () => {
-
     expect(isSecure('http://www.insecure.com')).toBe(false);
     expect(isSecure('https://secure.com')).toBe(true);
     expect(isSecure('https:/missingslash.org')).toBe(false);

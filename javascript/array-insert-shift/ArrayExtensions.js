@@ -1,5 +1,3 @@
-'use strict';
-
 const Utils = require('../lib/Utils');
 
 class ArrayExtensions {

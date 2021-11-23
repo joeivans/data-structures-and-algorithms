@@ -1,5 +1,3 @@
-'use strict';
-
 class Node {
   constructor(value) {
     this.value = value;
@@ -69,5 +67,5 @@ class BinaryTree {
 
 module.exports = {
   BinaryTree,
-  Node
+  Node,
 };

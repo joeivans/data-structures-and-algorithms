@@ -1,9 +1,7 @@
-'use strict';
-
 const PseudoQueue = require('../index');
 
-describe('PseudoQueue Tests', function () {
-  it('should enqueue 1', function () {
+describe('PseudoQueue Tests', () => {
+  it('should enqueue 1', () => {
     // Given
     const queue = new PseudoQueue();
     const data = 'hello';
@@ -15,7 +13,7 @@ describe('PseudoQueue Tests', function () {
     expect(queue.size).toBe(1);
   });
 
-  it('should dequeue 1', function () {
+  it('should dequeue 1', () => {
     // Given
     const queue = new PseudoQueue();
     const data = 'hello';
@@ -28,7 +26,7 @@ describe('PseudoQueue Tests', function () {
     expect(result).toBe(data);
   });
 
-  it('should enqueue 2', function () {
+  it('should enqueue 2', () => {
     // Given
     const queue = new PseudoQueue();
     const data = ['hello', 'world'];
@@ -41,7 +39,7 @@ describe('PseudoQueue Tests', function () {
     expect(queue.size).toBe(2);
   });
 
-  it('should dequeue 2', function () {
+  it('should dequeue 2', () => {
     // Given
     const queue = new PseudoQueue();
     const data = ['hello', 'world'];
@@ -57,7 +55,7 @@ describe('PseudoQueue Tests', function () {
     expect(result2).toBe(data[1]);
   });
 
-  it('should enqueue, dequeue some, enqueue, dequeue remaining', function () {
+  it('should enqueue, dequeue some, enqueue, dequeue remaining', () => {
     // Given
     const queue = new PseudoQueue();
     const data = ['a', 'b', 'c', 'd'];
@@ -79,7 +77,7 @@ describe('PseudoQueue Tests', function () {
     expect(result4).toBe(data[3]);
   });
 
-  it('should throw error on empty dequeue', function () {
+  it('should throw error on empty dequeue', () => {
     // Given
     const emptyQueue = new PseudoQueue();
 

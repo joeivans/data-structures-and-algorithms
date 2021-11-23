@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -8,7 +6,7 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = arr => arr.reduce((accumulator, value) => Math.max(value, accumulator));
+const maxInArray = (arr) => arr.reduce((accumulator, value) => Math.max(value, accumulator));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -19,12 +17,13 @@ containing the keys for the courseInfo object.
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
 const courseInfo = {
-  name: 'Code 301', duration: {dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+  name: 'Code 301',
+  duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
-  finalExam: true
+  finalExam: true,
 };
 
-const getCourseKeys = obj => Object.keys(obj);
+const getCourseKeys = (obj) => Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -53,8 +52,7 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ]
 ------------------------------------------------------------------------------------------------ */
 
-const updateNumbers = obj => Object.entries(obj).map(entry => `${entry[0]}: ${entry[1]}`);
-
+const updateNumbers = (obj) => Object.entries(obj).map((entry) => `${entry[0]}: ${entry[1]}`);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -106,7 +104,7 @@ const characters = [
   },
 ];
 
-const getHouses = arr => arr.map(character => character.house);
+const getHouses = (arr) => arr.map((character) => character.house);
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -121,10 +119,8 @@ hasChildrenValues(characters, 'Cersei') will return true
 hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
-const hasChildrenValues = (arr, character) =>
-  arr.filter(person =>
-    person.name === character && person.children && person.children.length > 0)
-    .length > 0;
+const hasChildrenValues = (arr, character) => arr.filter((person) => person.name === character && person.children && person.children.length > 0)
+  .length > 0;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -216,11 +212,11 @@ describe('Testing challenge 2', () => {
 
 describe('Testing challenge 3', () => {
   test('It should return true if the value is in the object', () => {
-    expect(checkValues({class: '301'}, '301')).toBe(true);
+    expect(checkValues({ class: '301' }, '301')).toBe(true);
   });
 
   test('It should return false if the value is not in the object', () => {
-    expect(checkValues({class: '301'}, '401')).toBe(false);
+    expect(checkValues({ class: '301' }, '401')).toBe(false);
   });
 });
 
@@ -229,7 +225,7 @@ describe('Testing challenge 4', () => {
     const startingObj = {
       'Grace Hopper': '222-303-5938',
       'Ada Lovelace': '222-349-9842',
-      'Alan Turing': '222-853-5933'
+      'Alan Turing': '222-853-5933',
     };
 
     expect(updateNumbers(startingObj).includes('Grace Hopper: 222-303-5938')).toBe(true);
@@ -242,7 +238,6 @@ describe('Testing challenge 5', () => {
     expect(getHouses(characters).length).toStrictEqual(7);
   });
 });
-
 
 describe('Testing challenge 6', () => {
   test('It should return true for characters that have children', () => {
@@ -272,13 +267,13 @@ xdescribe('Testing challenge 8', () => {
 
 xdescribe('Testing challenge 9', () => {
   test('It should return an object for each house containing the name and size', () => {
-    expect(houseSize(characters)[1]).toStrictEqual({house: 'Arryn', members: 3});
+    expect(houseSize(characters)[1]).toStrictEqual({ house: 'Arryn', members: 3 });
     expect(houseSize(characters).length).toStrictEqual(7);
   });
 });
 
 xdescribe('Testing challenge 10', () => {
   test('It should not include any deceased spouses', () => {
-    expect(houseSurvivors(characters)[2]).toStrictEqual({house: 'Lannister', members: 4});
+    expect(houseSurvivors(characters)[2]).toStrictEqual({ house: 'Lannister', members: 4 });
   });
 });

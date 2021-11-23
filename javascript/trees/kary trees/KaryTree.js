@@ -1,5 +1,3 @@
-'use strict';
-
 class Node {
   constructor(value, k = 0) {
     this.value = value;
@@ -19,11 +17,11 @@ class KaryTree {
    * @param callbackWithValue
    */
   breadthFirst(root, callbackWithValue) {
-    callbackWithValue(`'I'll try this soon`);
+    callbackWithValue('\'I\'ll try this soon');
   }
 }
 
 module.exports = {
   Node,
-  KaryTree
+  KaryTree,
 };

@@ -1,14 +1,12 @@
-'use strict';
-
 const {
   AnimalShelter,
   Animal,
   ANIMAL_SHELTER_PREFS_CAT,
-  ANIMAL_SHELTER_PREFS_DOG
+  ANIMAL_SHELTER_PREFS_DOG,
 } = require('../AnimalShelter');
 
-describe('Animal Shelter', function () {
-  it('should enqueue cats and dogs', function () {
+describe('Animal Shelter', () => {
+  it('should enqueue cats and dogs', () => {
     // Given
     const animalShelter = new AnimalShelter();
     const cat = new Animal(ANIMAL_SHELTER_PREFS_CAT);
@@ -22,7 +20,7 @@ describe('Animal Shelter', function () {
     expect(animalShelter.size).toBe(2);
   });
 
-  it('should dequeue cats only', function () {
+  it('should dequeue cats only', () => {
     // Given
     const animalShelter = new AnimalShelter();
     const cat = new Animal(ANIMAL_SHELTER_PREFS_CAT);
@@ -39,7 +37,7 @@ describe('Animal Shelter', function () {
     expect(result.kind).toBe(ANIMAL_SHELTER_PREFS_CAT);
   });
 
-  it('should dequeue dogs only', function () {
+  it('should dequeue dogs only', () => {
     // Given
     const animalShelter = new AnimalShelter();
     const cat = new Animal(ANIMAL_SHELTER_PREFS_CAT);

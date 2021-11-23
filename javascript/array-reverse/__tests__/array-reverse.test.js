@@ -1,10 +1,8 @@
-'use strict';
-
 // just want to auto-load the extensions
 const _ = new (require('../ArrayExtensions'))();
 
-describe('Array', function () {
-  it('`nonNativeReverse` extension should reverse its elements', function () {
+describe('Array', () => {
+  it('`nonNativeReverse` extension should reverse its elements', () => {
     // Given
     const input = [1, 2, 3, 4];
 
@@ -15,7 +13,7 @@ describe('Array', function () {
     expect(JSON.stringify(result)).toBe('[4,3,2,1]');
   });
 
-  it('should have an `each` function extension', function () {
+  it('should have an `each` function extension', () => {
     // Given
     const input = [1, 2, 3, 4];
     const result = [];

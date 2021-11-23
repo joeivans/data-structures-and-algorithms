@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -29,7 +27,7 @@ For example:
 
 return: 23
 ------------------------------------------------------------------------------------------------ */
-const findMax = matrix => matrix.flat().sort((a, b) => b - a).shift();
+const findMax = (matrix) => matrix.flat().sort((a, b) => b - a).shift();
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -46,7 +44,7 @@ For example:
 
 return: 35
 ------------------------------------------------------------------------------------------------ */
-const totalSum = matrix => matrix.flat().reduce((sum, num) => sum + num, 0);
+const totalSum = (matrix) => matrix.flat().reduce((sum, num) => sum + num, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -74,7 +72,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
-const grandTotal = stores => {
+const grandTotal = (stores) => {
   /*
     5 arrays of length 12
     i = 0; i < stores[i].length
@@ -96,7 +94,7 @@ const grandTotal = stores => {
       sum += stores[j][i];
     }
     result.push(sum);
-  } while (++i < stores[0].length && stores.every(store => store.length === stores[0].length));
+  } while (++i < stores[0].length && stores.every((store) => store.length === stores[0].length));
 
   return result;
 };
@@ -119,7 +117,6 @@ const salesData = (hours, data) => hours.map((hour, hoursIndex) => ({
   time: hours[hoursIndex],
 }));
 
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -130,20 +127,20 @@ from the pet store today from this array. The structure of the array will not ch
 const errands = [
   {
     store: 'Grocery store',
-    items: [{name: 'Eggs', quantity: 12}, {name: 'Milk', quantity: 1}, {name: 'Apples', quantity: 3}]
+    items: [{ name: 'Eggs', quantity: 12 }, { name: 'Milk', quantity: 1 }, { name: 'Apples', quantity: 3 }],
   },
   {
     store: 'Drug store',
-    items: [{name: 'Toothpaste', quantity: 1}, {name: 'Toothbrush', quantity: 3}, {name: 'Mouthwash', quantity: 1}]
+    items: [{ name: 'Toothpaste', quantity: 1 }, { name: 'Toothbrush', quantity: 3 }, { name: 'Mouthwash', quantity: 1 }],
   },
   {
     store: 'Pet store',
-    items: [{name: 'Cans of food', quantity: 8}, {name: 'Treats', quantity: 24}, {name: 'Leash', quantity: 1}]
-  }
+    items: [{ name: 'Cans of food', quantity: 8 }, { name: 'Treats', quantity: 24 }, { name: 'Leash', quantity: 1 }],
+  },
 ];
 
-const howManyTreats = arr => arr
-  .flatMap(obj => obj.items.filter(item => item.name === 'Treats'))
+const howManyTreats = (arr) => arr
+  .flatMap((obj) => obj.items.filter((item) => item.name === 'Treats'))
   .reduce((sum, item) => sum + item.quantity, 0);
 
 /* ------------------------------------------------------------------------------------------------
@@ -210,7 +207,7 @@ Calculate the average temperature for each week and return the value of the lowe
 For example, in the data set below, the lowest weekly average is 46, which is the average of the temperatures in week 2. All other weeks have average temperatures that are greater than 46.
 ------------------------------------------------------------------------------------------------ */
 
-let lowestWeeklyTemperatureData = [
+const lowestWeeklyTemperatureData = [
   [33, 64, 58, 65, 71, 57, 60],
   [40, 45, 33, 53, 44, 59, 48],
   [55, 54, 60, 53, 59, 57, 61],
@@ -277,18 +274,18 @@ describe('Testing challenge 4', () => {
 describe('Testing challenge 5', () => {
   test('It should create an object of data for each store', () => {
     expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
-      {sales: '88 cookies', time: '9 a.m.'},
-      {sales: '153 cookies', time: '10 a.m.'},
-      {sales: '252 cookies', time: '11 a.m.'},
-      {sales: '286 cookies', time: '12 p.m.'},
-      {sales: '139 cookies', time: '1 p.m.'},
-      {sales: '161 cookies', time: '2 p.m.'},
-      {sales: '145 cookies', time: '3 p.m.'},
-      {sales: '232 cookies', time: '4 p.m.'},
-      {sales: '276 cookies', time: '5 p.m.'},
-      {sales: '207 cookies', time: '6 p.m.'},
-      {sales: '161 cookies', time: '7 p.m.'},
-      {sales: '169 cookies', time: '8 p.m.'}
+      { sales: '88 cookies', time: '9 a.m.' },
+      { sales: '153 cookies', time: '10 a.m.' },
+      { sales: '252 cookies', time: '11 a.m.' },
+      { sales: '286 cookies', time: '12 p.m.' },
+      { sales: '139 cookies', time: '1 p.m.' },
+      { sales: '161 cookies', time: '2 p.m.' },
+      { sales: '145 cookies', time: '3 p.m.' },
+      { sales: '232 cookies', time: '4 p.m.' },
+      { sales: '276 cookies', time: '5 p.m.' },
+      { sales: '207 cookies', time: '6 p.m.' },
+      { sales: '161 cookies', time: '7 p.m.' },
+      { sales: '169 cookies', time: '8 p.m.' },
     ]);
 
     expect(salesData(hoursOpen, grandTotal(cookieStores)).length).toStrictEqual(hoursOpen.length);
@@ -348,7 +345,7 @@ xdescribe('Testing challenge 10', () => {
 
 xdescribe('Testing challenge 11', () => {
   test('It should return the total count for each row', () => {
-    let result = excel('1,1,1\n4,4,4\n9,9,9');
+    const result = excel('1,1,1\n4,4,4\n9,9,9');
     expect(result.length).toStrictEqual(3);
     expect(result[0]).toStrictEqual(3);
     expect(result[1]).toStrictEqual(12);

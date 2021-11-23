@@ -1,9 +1,7 @@
-'use strict';
-
 const _ = new (require('../ArrayExtensions'))();
 
-describe('Array insert shift', function () {
-  it('should insert the new value at the array\'s midpoint', function () {
+describe('Array insert shift', () => {
+  it('should insert the new value at the array\'s midpoint', () => {
     // Given
     // When
     const result_1 = [2, 4, 6, -8].nonNativeInsertShift(5);

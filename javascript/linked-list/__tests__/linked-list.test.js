@@ -1,5 +1,3 @@
-'use strict';
-
 const LinkedList = require('../LinkedList.js');
 
 /**
@@ -36,7 +34,7 @@ describe('LinkedList operations', () => {
     expect(getAllResult).toContain('hello');
   });
 
-  it('Can insert multiple values', function () {
+  it('Can insert multiple values', () => {
     linkedList.insert('hello');
     linkedList.insert('world');
     linkedList.insert('hi');
@@ -81,7 +79,7 @@ describe('LinkedList operations', () => {
     expect(linkedList.getAll()).toEqual([]);
   });
 
-  it('should return an in-order formatted toString value', function () {
+  it('should return an in-order formatted toString value', () => {
     linkedList.insert('hello');
     linkedList.insert('world');
     const toStringResult = linkedList.toString();

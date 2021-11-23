@@ -1,5 +1,3 @@
-'use strict';
-
 class Utils {
   /**
    * Keep only the whole number portion of a number.
