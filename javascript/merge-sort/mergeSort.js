@@ -1,5 +1,3 @@
-'use strict';
-
 /*
 This is really ugly pseudocode provided, not much pseudo going on
 Mergesort is complex enough to look at
@@ -58,12 +56,12 @@ function tooSmallToSort(array) {
  * array.
  */
 function divideAndConquer(array) {
-  const length = array.length;
+  const { length } = array;
   const middle = Math.floor(length / 2);
   const left = array.slice(0, middle);
   const right = array.slice(middle);
 
-  return {left, right};
+  return { left, right };
 }
 
 /**
@@ -77,11 +75,11 @@ function mergeSort(array) {
     return array;
   }
 
-  const {left, right} = divideAndConquer(array);
+  const { left, right } = divideAndConquer(array);
 
   return merge(
     mergeSort(left),
-    mergeSort(right)
+    mergeSort(right),
   );
 }
 

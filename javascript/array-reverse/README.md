@@ -16,5 +16,6 @@
 ## Tests
 
 ``` bash
+cd javascript
 run 'test:code-challenge-class-01'
 ```

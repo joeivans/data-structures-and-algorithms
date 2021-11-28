@@ -5,12 +5,14 @@
 - Implement merge sort in JavaScript.
 - Add test cases and ensure they pass.
 
-## Whiteboard Process
+## Strategy
+
+### Whiteboard Process
 <!-- Embedded whiteboard image -->
 
 ![Whiteboard](docs/images/Merge%20sort%20whiteboard.jpg)
 
-## Approach & Efficiency
+### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 I took the approach of analyzing the pseudocode then writing a JavaScript implementation.
@@ -21,7 +23,7 @@ Time efficiency, after removing insignificant factors, is `O(n log n)` because t
 
 Space efficiency, after removing insignificant factors, is `O(n)` because one additional copy of the array is created in memory.
 
-## Solution
+### Solution
 <!-- Show how to run your code, and examples of it in action -->
 
 Merge sort tests can be run with `npm run test:code-challenge-class-27`.
@@ -34,4 +36,11 @@ const mergeSort = require('./index'); // import the function from the merge-sort
 mergeSort([5, 4, 3, 2, 1]);           // sort an array
 
 console.log(arrayToSort);             // expected output: "[ 1, 2, 3, 4, 5 ]"
+```
+
+## Tests
+
+``` bash
+cd javascript
+npm run 'test:code-challenge-class-27'
 ```

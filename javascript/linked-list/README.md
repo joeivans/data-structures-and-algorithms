@@ -2,18 +2,20 @@
 
 We're just growing a LinkedList here.
 
-## Operations
+## Strategy
+
+### Operations
 
 - `+ insert(T) : void // O(1)`
 - `+ includes(T) : bool // O(n)`
 - `+ toString() : string // O(n)`
 
-## Properties
+### Properties
 
 - `+ value : T`
 - `+ next : node`
 
-## Insert Algorithm O(1)
+### Insert Algorithm O(1)
 
 - construct new node(value)
 - new node.next = head
@@ -26,5 +28,6 @@ We're just growing a LinkedList here.
 ## Tests
 
 ``` bash
+cd javascript
 npm run 'test:code-challenge-class-04'
 ```

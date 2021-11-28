@@ -18,5 +18,6 @@
 ## Tests
 
 ``` bash
+cd javascript
 npm run 'test:code-challenge-class-02'
 ```

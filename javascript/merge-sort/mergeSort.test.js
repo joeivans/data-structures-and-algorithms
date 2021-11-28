@@ -1,9 +1,7 @@
-'use strict';
-
-const {mergeSort} = require('./index.js');
+const { mergeSort } = require('./index.js');
 
 describe('Merge sort', () => {
-  it('should sort the first test case', function () {
+  it('should sort the first test case', () => {
     const sizeOne = [1];
     const sizeTwo = [2, 1];
     const randomSorted = [8, 4, 23, 42, 16, 15];
