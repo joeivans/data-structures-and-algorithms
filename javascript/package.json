@@ -1,0 +1,40 @@
+{
+  "name": "data-structures-and-algorithms",
+  "version": "1.0.0",
+  "description": "Data Structures, Algorithms, Code Challenges",
+  "main": "index.js",
+  "scripts": {
+    "get-challenge": "`which bash` ./code-challenges/bin/get-challenge.sh",
+    "start": "npm test",
+    "start:binary-tree": "node \"./trees/binary trees/index.js\"",
+    "start:knary-tree": "node \"./trees/kary trees/index.js\"",
+    "test": "jest --verbose --coverage",
+    "test:code-challenge-class-01": "jest \"./javascript/array-reverse\" --verbose --coverage",
+    "test:code-challenge-class-02": "jest \"./javascript/array-insert-shift\" --verbose --coverage",
+    "test:code-challenge-class-03": "jest \"./javascript/array-binary-search\" --verbose --coverage",
+    "test:code-challenge-class-04": "jest \"./javascript/array-binary-search\" --verbose --coverage",
+    "test:code-challenge-class-06": "jest \"./javascript/array-binary-search\" --verbose --coverage",
+    "test:code-challenge-class-26": "jest \"./javascript/insertion-sort\" --verbose --coverage",
+    "test:code-challenge-class-27": "jest \"./javascript/merge-sort\" --verbose --coverage",
+    "test:watch": "jest --watch --verbose --coverage",
+    "lint": "eslint \"**/*.js\"",
+    "lint:fix": "eslint \"**/*.js\" --fix"
+  },
+  "author": "Joe Ivans",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.6",
+    "mustache": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.1",
+    "jest-cli": "^27.3.1",
+    "prettier": "^2.4.1",
+    "supertest": "^6.1.6"
+  }
+}

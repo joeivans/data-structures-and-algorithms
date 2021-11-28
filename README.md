@@ -4,10 +4,11 @@
 
 ### JavaScript Challenges
 
-[Code Challenge: Class 01 - Array Reverse](javascript/array-reverse/README.md) \
-[Code Challenge: Class 02 - Array Insert Shift](javascript/array-insert-shift/README.md) \
-[Code Challenge: Class 03 - Array Binary Search](javascript/array-binary-search/README.md)
-[Code Challenge: Class 04 - LinkedList](javascript/linked-list/README.md) \
+[Code Challenge: Class 01 - Array Reverse](./javascript/array-reverse/README.md) \
+[Code Challenge: Class 02 - Array Insert Shift](./javascript/array-insert-shift/README.md) \
+[Code Challenge: Class 03 - Array Binary Search](./javascript/array-binary-search/README.md) \
+[Code Challenge: Class 04 - LinkedList](./javascript/linked-list/README.md) \
+[Code Challenge: Class 06 - LinkedList Insertions](./javascript/linked-list-insertions/README.md) \
 [Code Challenge: Class 26 - Insertion Sort](javascript/insertion-sort/README.md) \
 [Code Challenge: Class 27 - Merge Sort](javascript/merge-sort/README.md)
 

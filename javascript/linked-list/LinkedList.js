@@ -3,7 +3,7 @@
 const Node = require('./Node');
 
 class LinkedList {
-  #head;
+  head;
   count;
 
   constructor() {
@@ -11,7 +11,7 @@ class LinkedList {
   }
 
   clear() {
-    this.#head = null;
+    this.head = null;
     this.count = 0;
   }
 
@@ -27,23 +27,19 @@ class LinkedList {
   insert(value) {
     const newNode = new Node(value);
 
-    if (this.#head !== null) {
-      newNode.next = this.#head;
+    if (this.head !== null) {
+      newNode.next = this.head;
     }
 
-    this.#head = newNode;
+    this.head = newNode;
     this.count++;
-  }
-
-  getAllReversed() {
-    return this.getAll();
   }
 
   toString() {
     const stringBuilder = [];
 
-    for (const node of this.getAllReversed()) {
-      stringBuilder.push(`\{${node}\}`);
+    for (const node of Array.from(this).reverse()) {
+      stringBuilder.push(node);
     }
 
     stringBuilder.push('NULL');
@@ -52,7 +48,7 @@ class LinkedList {
   }
 
   getAll() {
-    return Array.from(this).reverse();
+    return Array.from(this).map(_ => _.value);
   }
 
   * [Symbol.iterator]() {
@@ -63,10 +59,10 @@ class LinkedList {
       `yield` keyword.
      */
 
-    let cursor = this.#head;
+    let cursor = this.head;
 
     while (cursor) {
-      yield cursor.value;
+      yield cursor;
       cursor = cursor.next;
     }
   }
