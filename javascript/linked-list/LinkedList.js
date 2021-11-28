@@ -33,6 +33,8 @@ class LinkedList {
 
     this.head = newNode;
     this.count++;
+
+    return this;
   }
 
   toString() {
