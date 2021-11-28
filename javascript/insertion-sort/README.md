@@ -5,12 +5,14 @@
 - Implement insertion sort in JavaScript.
 - Add test cases and ensure they pass.
 
-## Whiteboard Process
+## Strategy
+
+### Whiteboard Process
 <!-- Embedded whiteboard image -->
 
 ![Whiteboard](docs/images/Insertion%20sort%20whiteboard.jpg)
 
-## Approach & Efficiency
+### Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
 I took the approach of analyzing the pseudocode then writing a JavaScript implementation.
@@ -21,7 +23,7 @@ Time efficiency, after removing insignificant factors, is `O(n^2)` because the a
 
 Space efficiency, after removing insignificant factors, is `O(1)` because no additional variables or containers are created, just shifted in-place in the input array.
 
-## Solution
+### Solution
 <!-- Show how to run your code, and examples of it in action -->
 
 Insertion sort tests can be run with `npm run test:code-challenge-class-26`.
@@ -34,4 +36,11 @@ const insertionSortFunc = require('./index'); // import the function from the in
 insertionSortFunc([5, 4, 3, 2, 1]);           // sort an array
 
 console.log(arrayToSort);                     // expected output: "[ 1, 2, 3, 4, 5 ]"
+```
+
+## Tests
+
+``` bash
+cd javascript
+npm run 'test:code-challenge-class-26'
 ```
