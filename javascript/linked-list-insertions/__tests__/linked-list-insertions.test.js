@@ -61,4 +61,74 @@ describe('LinkedList Insertions', () => {
     expect(linkedList.getAll()).toEqual(['hello']);
     expect(linkedList.toString()).toEqual('{hello}->NULL');
   });
+
+  it('should insert before (append) target that doesn\'t exist, n is large', () => {
+    const linkedList = new LinkedList();
+
+    linkedList.insert('a');
+    linkedList.insert('b');
+    linkedList.insert('c');
+    linkedList.insert('d');
+    linkedList.insert('e');
+    linkedList.insert('f');
+    linkedList.insert('g');
+    linkedList.insert('h');
+    linkedList.insertBefore('world', 'hello');
+
+    expect(linkedList.count).toEqual(9);
+    expect(linkedList.toString()).toEqual('{a}->{b}->{c}->{d}->{e}->{f}->{g}->{h}->{hello}->NULL');
+  });
+
+  it('should insert after target that exists', () => {
+    const linkedList = new LinkedList();
+
+    linkedList.insert('hello');
+    linkedList.insertAfter('hello', 'world');
+
+    expect(linkedList.count).toEqual(2);
+    expect(linkedList.toString()).toEqual('{hello}->{world}->NULL');
+  });
+
+  it('should insert after target that exists, n is large', () => {
+    const linkedList = new LinkedList();
+
+    linkedList.insert('a');
+    linkedList.insert('b');
+    linkedList.insert('c');
+    linkedList.insert('e');
+    linkedList.insert('f');
+    linkedList.insert('g');
+    linkedList.insert('h');
+    linkedList.insertAfter('c', 'd');
+
+    expect(linkedList.count).toEqual(8);
+    expect(linkedList.toString()).toEqual('{a}->{b}->{c}->{d}->{e}->{f}->{g}->{h}->NULL');
+  });
+
+  it('should insert after (append) target that doesn\'t exist', () => {
+    const linkedList = new LinkedList();
+
+    linkedList.insertAfter('world', 'hello');
+
+    expect(linkedList.count).toEqual(1);
+    expect(linkedList.getAll()).toEqual(['hello']);
+    expect(linkedList.toString()).toEqual('{hello}->NULL');
+  });
+
+  it('should insert after (append) target that doesn\'t exist, n is large', () => {
+    const linkedList = new LinkedList();
+
+    linkedList.insert('a');
+    linkedList.insert('b');
+    linkedList.insert('c');
+    linkedList.insert('d');
+    linkedList.insert('e');
+    linkedList.insert('f');
+    linkedList.insert('g');
+    linkedList.insert('h');
+    linkedList.insertAfter('world', 'hello');
+
+    expect(linkedList.count).toEqual(9);
+    expect(linkedList.toString()).toEqual('{a}->{b}->{c}->{d}->{e}->{f}->{g}->{h}->{hello}->NULL');
+  });
 });

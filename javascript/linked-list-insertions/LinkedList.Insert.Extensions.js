@@ -21,26 +21,25 @@ LinkedList.prototype.insertBefore = function (target, value) {
     return;
   }
 
-  if (this.head && !this.head.next && this.head.value === target) {
+  const shouldInsertBeforeSingleElementList = this.head && !this.head.next && this.head.value === target;
+
+  if (shouldInsertBeforeSingleElementList) {
     const node = new Node(value);
-    const _ = this.head;
-    this.head = node;
-    node.next = _;
+
+    this.head.next = node;
     this.count++;
+
     return;
   }
 
+  let found = false;
   let previous = null;
   let cursor = this.head;
-  let found = false;
 
-  console.log(cursor.value);
-  // finds e
-  // previous is f
-  // next is c
   while (cursor) {
-    if (cursor.value === target) {
+    if (previous && previous.value === target) {
       found = true;
+
       const _ = cursor;
       const node = new Node(value);
 
@@ -54,9 +53,9 @@ LinkedList.prototype.insertBefore = function (target, value) {
     cursor = cursor.next;
   }
 
-  // if (!found) {
-  //   this.append(value);
-  // }
+  if (!found) {
+    this.append(value);
+  }
 };
 
 /**
@@ -66,7 +65,39 @@ LinkedList.prototype.insertBefore = function (target, value) {
  * @param value
  */
 LinkedList.prototype.insertAfter = function (target, value) {
-  //
+  const listIsEmpty = !this.head;
+  const listIsSingleNode = this.head && !this.head.next && this.head.value === target;
+
+  if (listIsEmpty || listIsSingleNode) {
+    this.append(value);
+    return;
+  }
+
+  let found = false;
+  let previous = null;
+  let cursor = this.head;
+
+  while (cursor) {
+    if (cursor.value === target) {
+      found = true;
+
+      const node = new Node(value);
+
+      previous.next = node;
+      node.next = cursor;
+
+      this.count++;
+
+      return;
+    }
+
+    previous = cursor;
+    cursor = cursor.next;
+  }
+
+  if (!found) {
+    this.append(value);
+  }
 };
 
 module.exports = LinkedList;
