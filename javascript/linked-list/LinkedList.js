@@ -48,7 +48,7 @@ class LinkedList {
   }
 
   getAll() {
-    return Array.from(this).map(_ => _.value).reverse();
+    return Array.from(this).map(_ => _.value);
   }
 
   * [Symbol.iterator]() {

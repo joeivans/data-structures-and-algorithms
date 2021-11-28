@@ -1,5 +1,3 @@
-'use strict';
-
 const LinkedList = require('../linked-list/LinkedList');
 const Node = require('../linked-list/Node');
 
@@ -18,30 +16,47 @@ LinkedList.prototype.append = function (value) {
  * @param value
  */
 LinkedList.prototype.insertBefore = function (target, value) {
+  if (!this.head) {
+    this.append(value);
+    return;
+  }
+
+  if (this.head && !this.head.next && this.head.value === target) {
+    const node = new Node(value);
+    const _ = this.head;
+    this.head = node;
+    node.next = _;
+    this.count++;
+    return;
+  }
+
   let previous = null;
+  let cursor = this.head;
+  let found = false;
 
-  for (const node of Array.from(this)) {
-    // did find target
-    if (node.value === target) {
-      let newNode = new Node(value);
+  console.log(cursor.value);
+  // finds e
+  // previous is f
+  // next is c
+  while (cursor) {
+    if (cursor.value === target) {
+      found = true;
+      const _ = cursor;
+      const node = new Node(value);
 
-      if (!previous) {
-        // need to replace head
-        this.head = newNode;
-        newNode.next = node;
-        this.count++;
-        return;
-      }
+      previous.next = node;
+      node.next = _;
 
-      previous.next = newNode;
-      newNode.next = node;
       this.count++;
-
-      return;
     }
 
-    previous = node;
+    previous = cursor;
+    cursor = cursor.next;
   }
+
+  // if (!found) {
+  //   this.append(value);
+  // }
 };
 
 /**
