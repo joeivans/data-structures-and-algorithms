@@ -22,10 +22,10 @@ Adding various insertion functionality
 ## Whiteboards
 
 Insert after n is 1
-![Insert after n is 1](docs/images/Linked list insert after n is 1.png)
+![Insert after n is 1](docs/images/Linked-list-insert-after-n-is-1.png)
 
 Insert after n is large
-![Insert after n is large](docs/images/Linked list insert after n is large.png)
+![Insert after n is large](docs/images/Linked-list-insert-after-n-is-large.png)
 
 ## Tests
 
