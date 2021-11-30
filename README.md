@@ -24,6 +24,7 @@ Please enjoy -Joe
 [Code Challenge: Class 07 - Kth Retrieval From End](javascript/linked-list-kth/README.md) \
 [Code Challenge: Class 26 - Insertion Sort](javascript/insertion-sort/README.md) \
 [Code Challenge: Class 27 - Merge Sort](javascript/merge-sort/README.md) \
+[Code Challenge: Class 28 - Quick Sort](javascript/quick-sort/README.md) \
 [Code Challenge: Class 31 - Merge Sort](javascript/hashmap-repeated-word/README.md)
 
 ### Tests
