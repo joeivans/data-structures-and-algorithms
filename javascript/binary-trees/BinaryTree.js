@@ -4,6 +4,10 @@ class Node {
     this.left = null;
     this.right = null;
   }
+
+  toString() {
+    return `{${this.value}}`;
+  }
 }
 
 class BinaryTree {
@@ -62,6 +66,14 @@ class BinaryTree {
     }
 
     callbackWithValue(current.value);
+  }
+
+  toString() {
+    const stringBuilder = [];
+    this.preOrder(this.root, (value) => stringBuilder.push(`${value}->`));
+    stringBuilder.push('NULL');
+
+    return stringBuilder.join();
   }
 }
 
