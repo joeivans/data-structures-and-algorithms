@@ -1,5 +1,5 @@
 const { BinaryTree, Node } = require('../binary-trees/BinaryTree');
-const HashMap = require('../hashmap-repeated-word/hashmap');
+const HashMap = require('../hashmap/hashmap');
 
 function treeIntersection(treeA, treeB) {
   const mapTreeA = new HashMap();

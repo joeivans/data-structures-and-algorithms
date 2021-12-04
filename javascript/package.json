@@ -19,6 +19,7 @@
     "test:code-challenge-class-27": "jest \"./javascript/merge-sort\" --verbose --coverage",
     "test:code-challenge-class-31": "jest \"./javascript/hashmap-repeated-word\" --verbose --coverage",
     "test:code-challenge-class-32": "jest \"./javascript/tree-intersection\" --verbose --coverage",
+    "test:code-challenge-class-33": "jest \"./javascript/hashmap-left-join\" --verbose --coverage",
     "test:watch": "jest --watch --verbose --coverage",
     "lint": "eslint \"**/*.js\"",
     "lint:fix": "eslint \"**/*.js\" --fix"
