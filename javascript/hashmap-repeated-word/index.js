@@ -1,4 +1,4 @@
-const HashMap = require('./hashmap');
+const HashMap = require('../hashmap/hashmap');
 
 function stripExtraChars(strIn) {
   return strIn.replace(/[,.]/g, '');
