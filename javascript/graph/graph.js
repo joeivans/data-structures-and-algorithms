@@ -85,8 +85,7 @@ class Graph {
   }
 }
 
+
 module.exports = {
-  Edge,
-  Graph,
-  Vertex,
+  Edge, Graph, Vertex,
 };
