@@ -21,6 +21,7 @@
     "test:code-challenge-class-32": "jest \"./javascript/tree-intersection\" --verbose --coverage",
     "test:code-challenge-class-35": "jest \"./javascript/graph\" --verbose --coverage",
     "test:code-challenge-class-36": "jest \"./javascript/graph-breadth-first\" --verbose --coverage",
+    "test:code-challenge-class-37": "jest \"./javascript/graph-business-trip\" --verbose --coverage",
     "test:watch": "jest --watch --verbose --coverage",
     "lint": "eslint \"**/*.js\"",
     "lint:fix": "eslint \"**/*.js\" --fix"
