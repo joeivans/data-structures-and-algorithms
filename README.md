@@ -26,7 +26,8 @@ Please enjoy -Joe
 [Code Challenge: Class 27 - Merge Sort](javascript/merge-sort/README.md) \
 [Code Challenge: Class 31 - Merge Sort](javascript/hashmap-repeated-word/README.md) \
 [Code Challenge: Class 35 - Graph Implementation](javascript/graph/README.md) \
-[Code Challenge: Class 36 - Graph Breadth-First Traversal](javascript/graph-breadth-first/README.md)
+[Code Challenge: Class 36 - Graph Breadth-First Traversal](javascript/graph-breadth-first/README.md) \
+[Code Challenge: Class 38 - Graph Depth-First Traversal](javascript/graph-depth-first/README.md)
 
 ### Tests
 
